@@ -1,7 +1,8 @@
 import styles from '../styles/Home.module.css';
-import Navbar from '../components/navbar2';
+import Navbar2 from '../components/navbar2';
 import db from '../database';
 import Card from '../components/Card';
+import Navbar1 from '../components/navbar1'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { signIn, signOut } from "next-auth/react";
@@ -9,12 +10,14 @@ import { getSession } from 'next-auth/react';
 
 export default function Home(props) {
   const curUser = props.currentUser;
+  console.log(props)
+
   //send the props current user to navbar componont 
   console.log("QASEM", props)
   const cakes = props.cakes;
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar1></Navbar1>
       <div className={styles.containerImg}>
       <div className={styles.container}>
         <div className={styles.searchForm}>
@@ -50,6 +53,7 @@ export async function getServerSideProps(req, res) {
   }
   const cakes = await db.Cake.findAll()
   const stringfycakes = JSON.parse(JSON.stringify(cakes))
+  
   return {
     props: { cakes: stringfycakes, currentUser: session?.user || null },
   }
