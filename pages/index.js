@@ -26,10 +26,6 @@ export default function Home(props) {
             <button className={styles.serachbutton} type="submit">Go</button>
           </form>
         </div>
-        {curUser ?
-          <button onClick={() => signOut()}>Sign out</button> :
-          <button onClick={() => signIn()}>Sign in</button>
-        }
         <dev className={styles.cards}>
           {cakes.map((cake, index) => (<h1 key={cake.id}><Card cake={cake} key={cake.id} /></h1>))}
         </dev>

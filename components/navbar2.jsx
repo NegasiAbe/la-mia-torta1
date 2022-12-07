@@ -32,14 +32,11 @@ export default function Component() {
                 <img className={styles.myAccount} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIqHwacmgoLwY1ktf2aZ6yYfgbljMNNwK4GA&usqp=CAU"></img>
             </div>
             <div lassName={styles.navlink}>
-                <Link href={`/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`}>
-                    {curuser ?
-                        <h4 className={styles.profile}>Sign out</h4> : signIn
-                    }
-                </Link>
+                {curuser ?
+                    <h4 onClick={() => signOut()} className={styles.profile}>Sign out</h4> :
+                    <h4 onClick={() => signIn()} className={styles.profile}>Sign In</h4>
+                }
             </div>
-
-
 
         </nav>
     )
