@@ -1,6 +1,65 @@
-.container {
-  padding: 0 2rem;
+/*Home page Start --disply the flats in home page--*/
+.containerImg {
+  content: '';
+  display: block;
+  padding: 0 10% 0 0;
+  background-image: url('../pages/image/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+.containerImg:before {
+  position: relative;
+}
+.container{
+  position: relative;
+}
+
+/*Just for serach end*/
+.searchForm {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+}
+.serachForm {
+  width: 30rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.serachinput {
+  height: 30px;
+  width: 100%;
+  padding: 0 1.6rem;
+  z-index: 1;
+}
+
+.serachinput:not(:placeholder-shown) {
+  height: 30px;
+  width: 100%;
+}
+
+.serachlabel {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+/*Just for serach end*/
+
+
+.cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+/*Home page End --disply the flats in home page--*/
 
 .main {
   min-height: 100vh;
