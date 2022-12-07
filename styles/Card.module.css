@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 10%;
+    margin: 0 10%;
+    width: 100%;
+  }
+  .cardimg{
+    margin: 0;
+    border: 1px solid blueviolet;
+    border-radius: 15px 15px 0 0;
+    font-size: 1rem;
+    text-align: center;
+    padding: 100px 0;
+    width: 100%;
+    transition: 0.5s;
+  }
+  .cardimg:hover{
+    box-shadow: 0px 0px 10px 0.5px blueviolet;
+  }
+
+  .cardDetails{
+    background-color: blueviolet;
+    height: 150px;
+  }
+  .cardDetails h5 {
+    margin: 10px 0 0 10px;
+    font-size: 15px;
+    color: white;
+  }
+  .cardDetails p {
+    display: grid;
+    margin-left: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: justify;
+  }
+  
+
+  

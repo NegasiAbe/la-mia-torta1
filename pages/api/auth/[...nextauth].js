@@ -19,11 +19,13 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         try {
+          //getorcreate one
           const user = await userController.getone(credentials.email,credentials.password)
           console.log(user);
           if (user) {
             return user
           } else {
+            //create a user with input and return user and infrom 
             throw new Error('you need to register')
           }
         } catch (error) {
