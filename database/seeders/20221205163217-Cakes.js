@@ -9,7 +9,27 @@ module.exports = {
       location:'Milano, Italia',
       price:'300',
       imageUrl:'asdasd',
-      UserID: '1',
+      UserId: '1',
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name:'Blue', 
+      description: 'Hello', 
+      location:'Milano, Italia',
+      price:'300',
+      imageUrl:'asdasd',
+      UserId: '1',
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name:'Red', 
+      description: 'Hello', 
+      location:'Milano, Italia',
+      price:'300',
+      imageUrl:'asdasd',
+      UserId: '1',
       createdAt: new Date(),
       updatedAt: new Date()
      },
@@ -19,7 +39,7 @@ module.exports = {
       location:'Milano, Italia',
       price:'350',
       imageUrl:'asdasdasd',
-      UserID: '2',
+      UserId: '2',
       createdAt: new Date(),
       updatedAt: new Date()
      }], {});

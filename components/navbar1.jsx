@@ -5,7 +5,7 @@ export default function Component() {
     return(
         <nav className={styles.navbar}>
             <div className= {styles.logo}>
-                <img className={styles.navlogo} src="tortaImage/torta image.png"></img>
+                <img className={styles.navlogo} src="tortaImage/logo.png"></img>
             </div>
 
 
