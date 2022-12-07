@@ -1,11 +1,20 @@
 import Link from "next/link"
-import styles from "../styles/Navbar.module.css";
+import styles from "../styles/Navbar.module.css"
+//import { Menu } from '@headlessui/react'
+import React from "react";
+import Image from "next/image";
+import { signIn } from "next-auth/react";
 
-export default function Component() {
-    return(
+export default function Component({ curuser }) {
+
+    return (<div>
+        {/* {console.log('the user in navbar is', curuser.props.children)} */}
+
         <nav className={styles.navbar}>
-            <div className= {styles.logo}>
-                <img className={styles.navlogo} src="tortaImage/torta image.png"></img>
+            <div className={styles.logo}>
+                <Image src='https://tse1.mm.bing.net/th?id=OIP.qOt_5rWJneT6ZgdY57duVwHaFj&pid=Api&rs=1&c=1&qlt=95&w=143&h=107'
+                 alt="Picture of the logo" width={50} height={30} 
+                className={styles.navlogo}/>
             </div>
 
 
@@ -22,9 +31,7 @@ export default function Component() {
                 
                 </Link>
             </div>
-
-            
         </nav>
+    </div>
     )
-
 }

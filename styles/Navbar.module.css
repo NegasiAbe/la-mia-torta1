@@ -20,10 +20,16 @@
     flex: 1;
     height: 7vh;
     width: 100%;
-    margin-right: 400px;
+    margin-right:500px;
 
 }
+.profile{
+    flex: 1;
+    height: 7vh;
+    width: 100%;
+    margin-right: 200px;
 
+}
 .myAccount{
     flex: 1;
     height: 7vh;
@@ -48,9 +54,3 @@
     margin-right: 50px;
 }
 
-.profile{
-    flex: 1;
-    height: 7vh;
-    width: 100%;
-    margin-left: 50px;
-}

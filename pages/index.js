@@ -7,16 +7,14 @@ import { getSession } from 'next-auth/react';
 
 export default function Home(props) {
   const curUser = props.currentUser;
+  console.log(props)
+
   //send the props current user to navbar componont 
   return (
     <>
-      <Navbar></Navbar>
-        <h1 className={styles.heading}>La Mia Torta Home Page</h1>
-      
-      {curUser ?
-        <button onClick={() => signOut()}>Sign out</button> :
-        <button onClick={() => signIn()}>Sign in</button>
-      }
+      <Navbar curuser={curUser}>
+      </Navbar>
+        <h1 className={styles.heading}>La Mia Torta Home Page</h1>        
     </>
   )
 }
@@ -33,7 +31,7 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-
+  
   return {
     props: { currentUser: session?.user || null },
   }
