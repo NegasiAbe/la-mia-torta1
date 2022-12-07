@@ -31,8 +31,6 @@
     js-yaml "^4.1.0"
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
-<<<<<<< HEAD
-=======
 
 "@headlessui/react@^1.7.4":
   version "1.7.4"
@@ -40,7 +38,6 @@
   integrity sha512-D8n5yGCF3WIkPsjEYeM8knn9jQ70bigGGb5aUvN6y4BGxcT3OcOQOKcM3zRGllRCZCFxCZyQvYJF6ZE7bQUOyQ==
   dependencies:
     client-only "^0.0.1"
->>>>>>> be5ec86712429c3ee3707943887e7a8e37336fe6
 
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
@@ -176,14 +173,11 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-<<<<<<< HEAD
-=======
 "@popperjs/core@2.4.4":
   version "2.4.4"
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.4.4.tgz"
   integrity sha512-1oO6+dN5kdIA3sKPZhRGJTfGVP4SWV6KqlMOwry4J3HfyD68sl/3KmG7DeYUzvN+RbhXDnv/D8vNNB8168tAMg==
 
->>>>>>> be5ec86712429c3ee3707943887e7a8e37336fe6
 "@popperjs/core@^2.6.0":
   version "2.11.6"
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz"
@@ -502,11 +496,7 @@ cli-color@^2.0.3:
     memoizee "^0.4.15"
     timers-ext "^0.1.7"
 
-<<<<<<< HEAD
-client-only@0.0.1:
-=======
 client-only@0.0.1, client-only@^0.0.1:
->>>>>>> be5ec86712429c3ee3707943887e7a8e37336fe6
   version "0.0.1"
   resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
