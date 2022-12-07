@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css'
 import Navbar from '../components/navbar1'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
-import { signIn, signOut } from "next-auth/react";
 import { getSession } from 'next-auth/react';
 
 export default function Home(props) {
