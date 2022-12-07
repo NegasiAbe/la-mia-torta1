@@ -10,6 +10,29 @@ module.exports = {
       price:'300',
       imageUrl:'asdasd',
       UserId: '1',
+<<<<<<< HEAD
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name:'Blue', 
+      description: 'Hello', 
+      location:'Milano, Italia',
+      price:'300',
+      imageUrl:'asdasd',
+      UserId: '1',
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name:'Red', 
+      description: 'Hello', 
+      location:'Milano, Italia',
+      price:'300',
+      imageUrl:'asdasd',
+      UserId: '1',
+=======
+>>>>>>> be5ec86712429c3ee3707943887e7a8e37336fe6
       createdAt: new Date(),
       updatedAt: new Date()
      },
