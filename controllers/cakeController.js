@@ -21,4 +21,3 @@ const cakesController = {
 }
 
 export default cakesController
-

@@ -3,7 +3,7 @@ import Image from "next/image"
 import styles from "../styles/Card.module.css";
 
 export default function Component({ cake }) {
-  console.log('image url is ', cake.imageurl)
+  console.log('image url is ', cake.imageUrl)
   return (
     <Link href={`/cakes/${cake.id}`}>
       <div className={styles.card} >
