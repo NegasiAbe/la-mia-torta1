@@ -8,7 +8,7 @@ module.exports = {
       description: ' a cake flavored with melted chocolate, cocoa powder, or both', 
       location:'Milano, Italia',
       price:'300',
-      imageUrl:'asdasd',
+      imageUrl:'',
       UserId: '1',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -18,7 +18,7 @@ module.exports = {
       description: 'Strawberry cake is typically made of strawberries and sweetened whipped cream', 
       location:'Milano, Italia',
       price:'350',
-      imageUrl:'asdasdasd',
+      imageUrl:'',
       UserId: '2',
       createdAt: new Date(),
       updatedAt: new Date()
