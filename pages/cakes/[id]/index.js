@@ -1,7 +1,6 @@
-import styles from '../../styles/Select.module.css'
-import Navbar from "../../components/navbar1"
-import  cakeController from '../../controllers/cakeController'
-import { Input } from 'reactstrap'
+import styles from '../../../styles/Select.module.css'
+import Navbar from "../../../components/navbar1"
+import  cakesController from '../../../controllers/cakeController'
 
 export default function oneCake(props){
   const cakes = props.cake
@@ -58,7 +57,7 @@ export default function oneCake(props){
          
 export async function getServerSideProps(req, res) {
     const { id } = req.query
-    const cake = await cakeController.find(id)
+    const cake = await cakesController.find(id)
     return {
       props: { cake },
     }
