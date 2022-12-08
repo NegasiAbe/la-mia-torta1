@@ -3,7 +3,8 @@ import styles from "../styles/Navbar.module.css"
 //import { Menu } from '@headlessui/react'
 import React from "react";
 import Image from "next/image";
-import { signIn } from "next-auth/react";
+
+import { signIn, signOut } from "next-auth/react";
 
 export default function Component({ curuser }) {
 
@@ -23,11 +24,12 @@ export default function Component({ curuser }) {
             </div>
           
             <div lassName={styles.navlink}>
-                <Link href={`/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`}>
+                {/* <Link href={`/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`}> */}
                     {curuser ?
-                    <h4 className={styles.profile}>Sign In</h4>:signIn                       
+                    <h4 onClick={() => signOut()} className={styles.profile}>Sign out</h4> : 
+                    <h4 onClick={() => signIn()} className={styles.profile}>Sign In</h4>                       
                     }
-                </Link>
+                {/* </Link> */}
             </div>
         </nav>
     </div>
