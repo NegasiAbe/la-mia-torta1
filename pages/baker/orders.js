@@ -1,26 +1,23 @@
 import styles from '../../styles/Baker.module.css';
-//import Navbaker from '../../components/navbaker';
+import Navbaker from '../../components/Navbaker';
 import db from '../../database';
 import Card from '../../components/Card';
-import Navbaker from '../../components/Navbaker'
-//import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { getSession } from 'next-auth/react';
 
-export default function Home(props) {
+export default function bakerOrder(props) {
   const curUser = props.currentUser;
-  console.log('props from baker index page is :',props.currentUser)
+  console.log(props)
 
   //send the props current user to navbar componont 
-  const cakes = props.cakes;
+  const orders = props.orders;
   return (
     <>
       <Navbaker curuser={curUser}></Navbaker>
       <div className={styles.containerImg}>
-      <div className={styles.container}>
-        
+      <div className={styles.container}>    
         <dev className={styles.cards}>
-          {cakes.map((cake, index) => (<h1 key={cake.id}><Card cake={cake} key={cake.id} /></h1>))}
+          {orders.map(order => (<h1 key={order.id}><Card cake={order} key={order.id} /></h1>))}
         </dev>
       </div>
       </div>
@@ -38,19 +35,19 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-/*   const email = "s@g.com"
-  session.user.email = email */
+  // const email = "s@g.com"
+  //session.user.email = email
+  let orders = ''
   const owner = await db.User.findOne({where:{email:session.user.email}})
-  let cake= ''
-  if(owner){ 
-   cake = await db.Cake.findAll({where:{UserId:owner.id}})
+  if(owner){
+    orders = await db.Order.findAll({where:{UserId:owner.id}})
   }
   else{
-    throw `There is no created cakes with user ${session.user.email}`
+    throw `There is no order with user ${session.user.email}`
   }
-  const stringfycakes = JSON.parse(JSON.stringify(cake))
+  const stringfyOrders = JSON.parse(JSON.stringify(orders))
 
   return {
-    props: { cakes: stringfycakes, currentUser: session?.user || null },
+    props: { orders: stringfyOrders, currentUser: session?.user || null },
   }
 }
