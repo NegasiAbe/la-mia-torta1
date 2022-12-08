@@ -13,9 +13,8 @@ const cakesController = {
     return parsedCake
   },
   create: async (data) => {
-    const cake = await db.Cake.create({
-        name, description, price, location, imageUrl, UserId
-    })
+    console.log(data)
+    const cake = await db.Cake.create(data)
     return JSON.parse(JSON.stringify(cake))
   }
   
