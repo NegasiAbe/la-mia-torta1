@@ -1,5 +1,5 @@
 import styles from '../../styles/Baker.module.css';
-import Navbaker from '../../components/navbaker';
+import Navbaker from '../../components/Navbaker';
 import db from '../../database';
 import Card from '../../components/Card';
 
@@ -26,7 +26,6 @@ export default function bakerOrder(props) {
 }
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
-  console.log('session is:', session.user.email)
   if (!session) {
     return {
       redirect: {
@@ -36,9 +35,12 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
+  // const email = "s@g.com"
+  //session.user.email = email
+  let orders = ''
   const owner = await db.User.findOne({where:{email:session.user.email}})
   if(owner){
-    const orders = await db.Order.findAll({where:{UserId:owner.id}})
+    orders = await db.Order.findAll({where:{UserId:owner.id}})
   }
   else{
     throw `There is no order with user ${session.user.email}`
