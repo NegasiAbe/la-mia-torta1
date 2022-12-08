@@ -61,7 +61,7 @@ export default function oneCake(props){
          
 export async function getServerSideProps(req, res) {
     const { id } = req.query
-    const cake = await cakeController.find(id)
+    const cake = await cakesController.find(id)
     return {
       props: { cake },
     }

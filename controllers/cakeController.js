@@ -16,7 +16,13 @@ const cakesController = {
     console.log(data)
     const cake = await db.Cake.create(data)
     return JSON.parse(JSON.stringify(cake))
-  }
+  },
+  
+  create: async (id, data) => {
+    const cake = await db.Cake.findByPk(id)
+    cake.update(data)
+    return JSON.parse(JSON.stringify(cake))
+  },
   
 }
 
