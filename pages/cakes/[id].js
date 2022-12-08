@@ -41,7 +41,10 @@ export default function oneCake(props){
                 
                 <h2>Bakery Information</h2>
                 <h4>Address: {cakes.location}</h4>
-                <input type="submit" className={styles.button} value="Order" />
+
+                <form method="POST" action='/order/payment'>
+                  <input type="submit" className={styles.button} value="Order" />
+                </form>              
               </div>
             </div>
           </div>
