@@ -1,5 +1,5 @@
 import styles from '../../styles/Select.module.css'
-import Navbar from "../../components/navbar1"
+import Navbar from "../../components/navcustomer"
 import  cakeController from '../../controllers/cakeController'
 import { Input } from 'reactstrap'
 

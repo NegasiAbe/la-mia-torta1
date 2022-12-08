@@ -26,18 +26,9 @@
 .profile{
     flex: 1;
     height: 7vh;
-    width: 100%;
-    margin-right: 200px;
-
-}
-.myAccount{
-    flex: 1;
-    height: 7vh;
     width: 7vh;
     padding: 5px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-
+    margin-right: 100px;
 }
 
 .upload{

@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import Navbar from '../components/navbar1'
+import Navbar from '../components/navcustomer'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { signIn, signOut } from "next-auth/react";
