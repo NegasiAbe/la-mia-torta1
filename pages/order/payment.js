@@ -13,7 +13,7 @@ export default function payment (props) {
             <div className= {styles.box1}>
                 <div className= {styles.form}>
 
-                <form method="POST" action="/api/baker">
+                <form method="POST" action="/order/done">
                   <div >
                     <Input type="text" placeholder="your full name.."className={styles.name}id="fullname" />
                   </div>
@@ -40,19 +40,10 @@ export default function payment (props) {
                     
             </div>
         </div>
-            
-                    
-                    
-                    
-               
-        
-
-  
-
-
             <div className= {styles.box2}>
                 <img className={styles.visacard} src= "https://www.braintreepayments.com/images/features/payment-methods/payment-methods.png"></img>
             </div>
+            
         </div>
         
         </>

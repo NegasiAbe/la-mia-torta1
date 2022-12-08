@@ -87,3 +87,10 @@
 .wrap{
     display:flex;
 }
+
+.giftbox{
+    padding: none;
+    margin-left: 500px;
+    height: 200px;
+
+}
