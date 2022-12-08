@@ -9,10 +9,7 @@ import { getSession } from 'next-auth/react';
 
 export default function Home(props) {
   const curUser = props.currentUser;
-  console.log(props)
-
   //send the props current user to navbar componont 
-  console.log("QASEM", props)
   const cakes = props.cakes;
   return (
     <>
