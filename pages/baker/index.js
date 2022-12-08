@@ -38,8 +38,8 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-/*   const email = "s@g.com"
-  session.user.email = email */
+  const email = "s@g.com"
+  session.user.email = email 
   const owner = await db.User.findOne({where:{email:session.user.email}})
   let cake= ''
   if(owner){ 
