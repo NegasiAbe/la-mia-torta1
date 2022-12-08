@@ -1,22 +1,19 @@
 import styles from '../styles/Home.module.css';
-import Navbar2 from '../components/navbar2';
 import db from '../database';
 import Card from '../components/Card';
-import Navbar1 from '../components/navbar1'
+import Navbaker from '../components/Navbaker'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { getSession } from 'next-auth/react';
 
 export default function Home(props) {
   const curUser = props.currentUser;
-  console.log(props)
 
   //send the props current user to navbar componont 
-  console.log("QASEM", props)
   const cakes = props.cakes;
   return (
     <>
-      <Navbar1 curuser={curUser}></Navbar1>
+      <Navbaker curuser={curUser}></Navbaker>
       <div className={styles.containerImg}>
       <div className={styles.container}>
         <div className={styles.searchForm}>

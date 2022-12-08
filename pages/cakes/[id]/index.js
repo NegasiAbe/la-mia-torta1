@@ -1,6 +1,7 @@
-import styles from '../../../styles/Select.module.css'
-import Navbar from "../../../components/navbar1"
-import  cakesController from '../../../controllers/cakeController'
+import styles from '../../styles/Select.module.css'
+import Navbar from "../../components/navcustomer"
+import  cakeController from '../../controllers/cakeController'
+import { Input } from 'reactstrap'
 
 export default function oneCake(props){
   const cakes = props.cake
@@ -40,7 +41,10 @@ export default function oneCake(props){
                 
                 <h2>Bakery Information</h2>
                 <h4>Address: {cakes.location}</h4>
-                <input type="submit" className={styles.button} value="Order" />
+
+                <form method="POST" action='/order/payment'>
+                  <input type="submit" className={styles.button} value="Order" />
+                </form>              
               </div>
             </div>
           </div>
