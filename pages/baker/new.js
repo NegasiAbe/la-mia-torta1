@@ -48,12 +48,8 @@ return (
                   <Input type="text" name="location" className={styles.formControl} id="location" placeholder="please write the address" />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="user id" className={styles.label}>User ID:</label><br />
-                  <Input type="number" name="user id" className={styles.formControl} id="user id" placeholder="write the user id" />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="imageUrl" className={styles.label}>Insert photo:</label><br />
-                  <input type="file" name="imageUrllable" className={styles.formControl} id="imageUrl" onChange={handlimgUpload}/>
+                  <label htmlFor="imgUploud" className={styles.label}>Insert photo:</label><br />
+                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
                   <input type="hidden" name='imageUrl' value={url}/>
                 </div>
                 <br />
