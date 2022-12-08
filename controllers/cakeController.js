@@ -18,14 +18,11 @@ const cakesController = {
     const cake = await db.Cake.create(data)
     return JSON.parse(JSON.stringify(cake))
   },
-  allOrders: async () => {
-    const cake = await db.Cake.findAll({
-      include: {
-        model: db.Order
-      }
-    })
-    const parsedCake = JSON.parse(JSON.stringify(cake))
-    return parsedCake
+  
+  create: async (id, data) => {
+    const cake = await db.Cake.findByPk(id)
+    cake.update(data)
+    return JSON.parse(JSON.stringify(cake))
   },
   
 }
