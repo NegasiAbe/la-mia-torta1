@@ -12,7 +12,6 @@ export default function Home(props) {
   console.log(props)
 
   //send the props current user to navbar componont 
-  console.log("QASEM", props)
   const cakes = props.cakes;
   return (
     <>

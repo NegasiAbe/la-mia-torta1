@@ -14,10 +14,6 @@ export default function NewCake(props) {
     {method: "POST", body: imageForm}
     )   
     const res = await imgFetch.json()
-    
-    console.log('image url form cloud',imgFetch)
-    
-    console.log('image url form  secure url',res.secure_url)
     setUrl(res.secure_url)
   }
 

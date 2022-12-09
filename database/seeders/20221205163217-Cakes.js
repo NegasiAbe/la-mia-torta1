@@ -12,16 +12,6 @@ module.exports = {
       UserId: '1',
       createdAt: new Date(),
       updatedAt: new Date()
-     },
-     {
-      name:'Stawberry Cake', 
-      description: 'Strawberry cake is typically made of strawberries and sweetened whipped cream', 
-      location:'Milano, Italia',
-      price:'350',
-      imageUrl:'',
-      UserId: '2',
-      createdAt: new Date(),
-      updatedAt: new Date()
      }], {});
    
   },
