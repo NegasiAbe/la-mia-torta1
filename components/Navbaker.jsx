@@ -9,7 +9,6 @@ export default function Component(curuser) {
                 <img className={styles.navlogo} src="tortaImage/torta image.png"></img>
             </div>
 
-
             <div className={styles.navlink}>
                 <Link href={`/`}>
                     <h4 className={styles.Home}>Home</h4>
