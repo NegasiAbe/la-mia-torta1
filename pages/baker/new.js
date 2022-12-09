@@ -1,8 +1,7 @@
 import styles from '../../styles/NewCake.module.css'
 import { Input } from 'reactstrap'
 import { useState } from 'react'
-import Navbar2 from '../../components/navbar2'
-import Navbar1 from '../../components/navbar1'
+
 export default function NewCake(props) {
   const [url, setUrl] = useState('')
   const handlimgUpload = async (event) => {
