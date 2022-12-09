@@ -1,7 +1,8 @@
 import Link from "next/link"
 import styles from "../styles/Navbar.module.css";
+import { signIn, signOut } from "next-auth/react";
 
-export default function Component() {
+export default function Component(curuser) {
     return (
         <nav className={styles.navbar}>
             <div className={styles.logo}>

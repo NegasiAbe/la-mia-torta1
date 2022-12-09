@@ -1,26 +1,25 @@
 import styles from '../../styles/Baker.module.css';
-import Navbar2 from '../../components/navbar2';
+//import Navbaker from '../../components/navbaker';
 import db from '../../database';
-import Card from '../../components/Card';
-import Navbar1 from '../../components/navbar1'
+import UpdateCard from '../../components/UpdateCard';
+import Navbaker from '../../components/Navbaker'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { getSession } from 'next-auth/react';
 
 export default function Home(props) {
   const curUser = props.currentUser;
-  console.log(props)
 
   //send the props current user to navbar componont 
   const cakes = props.cakes;
   return (
     <>
-      <Navbar1 curuser={curUser}></Navbar1>
+      <Navbaker curuser={curUser}></Navbaker>
       <div className={styles.containerImg}>
       <div className={styles.container}>
-        
+
         <dev className={styles.cards}>
-          {cakes.map((cake, index) => (<h1 key={cake.id}><Card cake={cake} key={cake.id} /></h1>))}
+          {cakes.map((cake, index) => (<h1 key={cake.id}><UpdateCard cake={cake} key={cake.id} /></h1>))}
         </dev>
       </div>
       </div>
@@ -29,7 +28,6 @@ export default function Home(props) {
 }
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
-  console.log('session is', session)
   if (!session) {
     return {
       redirect: {
@@ -39,9 +37,18 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-  const cakes = await db.Cake.findAll()
-  const stringfycakes = JSON.parse(JSON.stringify(cakes))
-  
+  const email = "s@g.com"
+  session.user.email = email 
+  const owner = await db.User.findOne({where:{email:session.user.email}})
+  let cake= ''
+  if(owner){ 
+   cake = await db.Cake.findAll({where:{UserId:owner.id}})
+  }
+  else{
+    throw `There is no created cakes with user ${session.user.email}`
+  }
+  const stringfycakes = JSON.parse(JSON.stringify(cake))
+
   return {
     props: { cakes: stringfycakes, currentUser: session?.user || null },
   }

@@ -1,10 +1,10 @@
-import styles from '../../styles/NewCake.module.css'
+import cakesController from '../../../controllers/cakeController'
+import styles from '../../../styles/NewCake.module.css'
 import { Input } from 'reactstrap'
 import { useState } from 'react'
-import Navbar2 from '../../components/navbar2'
-import Navbar1 from '../../components/navbar1'
-export default function NewCake(props) {
-  const [url, setUrl] = useState('')
+export default function NewCake({cake}) {
+  const [url, setUrl] = useState(cake.imageUrl)
+  
   const handlimgUpload = async (event) => {
     const file = event.target.files[0]
     const imageForm = new FormData()
@@ -17,33 +17,39 @@ export default function NewCake(props) {
     setUrl(res.secure_url)
   }
 
+
+
 return (
     <>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
-            <h2 className={styles.cardTitle}> <a href="../new">New Cake</a></h2>
+            <h2 className={styles.cardTitle}> Edite your cake here</h2>
             <div className={styles.cardBody}>
-              <form method="POST" action="/api/bakers/new">
+              <form method="POST" action={`/api/cakes/${cake.id}/update`}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>Name:</label><br />
-                  <Input type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
+                  <Input defaultValue={cake.name} type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="description" className={styles.label}>description:</label><br />
-                  <Input type="text" name='description' className={styles.formControl} id="description" placeholder="Description of the cake" />
+                  <Input defaultValue={cake.description}  type="text" name='description' className={styles.formControl} id="description" placeholder="Description of the cake" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="price" className={styles.label}>Price:</label><br />
-                  <Input type="number" name="price" className={styles.formControl} id="price" placeholder="Price" />
+                  <Input defaultValue={cake.price} type="number" name="price" className={styles.formControl} id="price" placeholder="Price" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="location" className={styles.label}>Location:</label><br />
-                  <Input type="text" name="location" className={styles.formControl} id="location" placeholder="please write the address" />
+                  <Input defaultValue={cake.location} type="text" name="location" className={styles.formControl} id="location" placeholder="please write the address" />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="imgUploud" className={styles.label}>Insert photo:</label><br />
-                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
+                  <label htmlFor="user id" className={styles.label}>User ID:</label><br />
+                  <Input defaultValue={cake.UserId} type="number" name="UserId" className={styles.formControl} id="user id" placeholder="write the user id" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="imageUrl" className={styles.label}>Insert photo:</label><br />
+                  <input type="file" name="imageUrllable" className={styles.formControl} id="imageUrl" onChange={handlimgUpload}/>
                   <input type="hidden" name='imageUrl' value={url}/>
                 </div>
                 <br />
@@ -57,4 +63,12 @@ return (
       </div>
     </>
   )
+}
+
+export async function getServerSideProps(req, res) {
+  const { id } = req.query
+  const cake = await cakesController.find(id)
+  return {
+    props: { cake },
+  }
 }

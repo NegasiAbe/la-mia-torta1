@@ -2,7 +2,7 @@ import Link from "next/link"
 import styles from "../styles/Card.module.css";
 
 export default function Component({ cake }) {
-  console.log('image url is======== ', cake.imageurl)
+  console.log('image url is ', cake.imageUrl)
   return (
     <>
       <div className={styles.card} >
@@ -18,6 +18,7 @@ export default function Component({ cake }) {
           <div className={styles.button}>Select</div>
           </a>  
         </div>
+
       </div>
     </>
   )
