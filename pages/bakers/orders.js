@@ -16,9 +16,9 @@ export default function bakerOrder(props) {
       <Navbaker curuser={curUser}></Navbaker>
       <div className={styles.containerImg}>
       <div className={styles.container}>    
-        <dev className={styles.cards}>
-          {orders.map(order => (<h1 key={order.id}><Card cake={order} key={order.id} /></h1>))}
-        </dev>
+        <div className={styles.cards}>
+          {orders.map(order => (<Card cake={order} key={order.id} />))}
+        </div>
       </div>
       </div>
     </>
@@ -40,6 +40,7 @@ export async function getServerSideProps(req, res) {
   let orders = ''
   const owner = await db.User.findOne({where:{email:session.user.email}})
   if(owner){
+    //To do the: Find the orders of the baker
     orders = await db.Order.findAll({where:{UserId:owner.id}})
   }
   else{
