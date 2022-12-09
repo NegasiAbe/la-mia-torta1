@@ -1,5 +1,5 @@
 import styles from '../../styles/Select.module.css'
-import Navbar from "../../components/navcustomer"
+import Navcustomer from "../../components/Navcustomer"
 import  cakeController from '../../controllers/cakeController'
 import { Input } from 'reactstrap'
 
@@ -8,7 +8,7 @@ export default function oneCake(props){
   console.log("cakes: " , cakes)
     return (
       <>
-      <Navbar></Navbar>
+      <Navcustomer></Navcustomer>
       <h3 className= {styles.wording}>You are just one step away.....</h3>
       <div class={styles.container}>
         <div class={styles.row}>

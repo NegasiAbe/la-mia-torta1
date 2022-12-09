@@ -35,8 +35,8 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-  // const email = "s@g.com"
-  //session.user.email = email
+   const email = "s@g.com"
+  session.user.email = email
   let orders = ''
   const owner = await db.User.findOne({where:{email:session.user.email}})
   if(owner){
