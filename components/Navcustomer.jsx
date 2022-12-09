@@ -23,11 +23,11 @@ export default function Component({ curuser }) {
                 </Link>
             </div>
           
-            <div lassName={styles.navlink}>
+            <div className={styles.navlink}>
                 {/* <Link href={`/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`}> */}
                     {curuser ?
-                    <h4 onClick={() => signOut()} className={styles.profile}>Sign out</h4> : 
-                    <h4 onClick={() => signIn()} className={styles.profile}>Sign In</h4>                       
+                    <h4 onClick={() => signOut()} className={styles.profile}>SignOut</h4> : 
+                    <h4 onClick={() => signIn()} className={styles.profile}>SignIn</h4>                       
                     }
                 {/* </Link> */}
             </div>

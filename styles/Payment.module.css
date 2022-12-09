@@ -1,0 +1,107 @@
+.payment{
+    text-align: center;
+    font-family: cursive;
+}
+
+.containerwrap{
+    display: flex;
+    width: 800px;
+    margin-left: 250px;
+
+
+}
+
+.box1 {
+    flex:1;
+    border: 2px solid #c9c9c9;
+    height: 200px;
+    
+
+  
+    
+}
+
+.box2 {
+    flex: 1;
+    border: 2px solid #c9c9c9;
+    margin-left: 10px;
+    height: 200px;
+    
+    
+}
+.visacard{
+    height: 200px;
+    width: 400px;
+}
+
+.name{
+    margin-top: 15px;
+    height: 30px;
+    width: 300px;
+    padding-left: 10px;
+    margin-left: 40px;
+    
+
+}
+
+.cardno{
+    margin-top: 2px;
+    height: 30px;
+    width: 300px;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-left: 40px;
+
+   
+}
+
+.date{
+    margin-top: 2px;
+    height: 30px;
+    width: 120px;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-left: 40px;
+
+    
+}
+
+.security{
+    margin-top: 2px;
+    margin-left: 10px;
+    height: 30px;
+    width: 120px;
+    padding-left: 10px;
+    margin-top: 20px;
+    
+}
+
+.btn{
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 40px;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+}
+.wrap{
+    display:flex;
+}
+
+.giftbox{
+    padding: none;
+    margin-left: 500px;
+    height: 200px;
+
+}
+.summary{
+    margin-left: 400px;
+}
+
+.details{
+    border: 2px solid black;
+    height: 100px;
+    width:500px;
+    margin-left: 400px;
+    
+}
