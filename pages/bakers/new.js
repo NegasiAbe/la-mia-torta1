@@ -1,6 +1,7 @@
 import styles from '../../styles/NewCake.module.css'
 import { Input } from 'reactstrap'
 import { useState } from 'react'
+import Navbaker from '../../components/Navbaker'
 
 export default function NewCake(props) {
   const [url, setUrl] = useState('')
@@ -18,6 +19,8 @@ export default function NewCake(props) {
 
   return (
     <>
+    <Navbaker></Navbaker>
+    <div className={styles.background}>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
@@ -25,24 +28,24 @@ export default function NewCake(props) {
             <div className={styles.cardBody}>
               <form method="POST" action="/api/cakes">
                 <div className={styles.formGroup}>
-                  <label htmlFor="name" className={styles.label}>Name:</label><br />
+                  <label htmlFor="name" className={styles.label}></label><br />
                   <Input type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="description" className={styles.label}>description:</label><br />
+                  <label htmlFor="description" className={styles.label}></label><br />
                   <Input type="text" name='description' className={styles.formControl} id="description" placeholder="Description of the cake" />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="price" className={styles.label}>Price:</label><br />
-                  <Input type="number" name="price" className={styles.formControl} id="price" placeholder="Price" />
+                  <label htmlFor="price" className={styles.label}></label><br />
+                  <Input type="text" name="price" className={styles.formControl} id="price" placeholder="Price" />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="location" className={styles.label}>Location:</label><br />
-                  <Input type="text" name="location" className={styles.formControl} id="location" placeholder="please write the address" />
+                  <label htmlFor="location" className={styles.label}></label><br />
+                  <Input type="text" name="location" className={styles.formControl} id="location" placeholder="address" />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="imgUploud" className={styles.label}>Insert photo:</label><br />
-                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload} />
+                  <label htmlFor="imgUploud" className={styles.label}>Upload Your Cake image </label><br />
+                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
                   <input type="hidden" name='imageUrl' value={url} />
                 </div>
                 <br />
@@ -53,6 +56,7 @@ export default function NewCake(props) {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )

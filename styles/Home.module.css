@@ -3,15 +3,17 @@
   content: '';
   display: block;
   padding: 0 10% 0 0;
-  background-image: url('../pages/image/bg.jpg');
+  background-image: url('../public/image/bg.jpg');
   background-repeat: repeat;
   background-position: center;
   background-size: fill;
 }
+
 .containerImg:before {
   position: relative;
 }
-.container{
+
+.container {
   position: relative;
 }
 
@@ -21,6 +23,7 @@
   width: 100%;
   justify-content: center;
 }
+
 .serachForm {
   width: 30rem;
   border: 1px solid gray;
@@ -49,10 +52,11 @@
   width: 1px;
   overflow: hidden;
 }
+
 /*Just for serach end*/
 
 
-.cards{
+.cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 16px;
@@ -175,19 +179,21 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
 }
 
-.heading{
+.heading {
   text-align: center;
 }
-

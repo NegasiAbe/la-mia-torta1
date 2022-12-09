@@ -28,10 +28,8 @@ export default function Component(curuser) {
                 </Link>
             </div>
 
+            
 
-            <div className={styles.navlink}>
-                <img className={styles.myAccount} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIqHwacmgoLwY1ktf2aZ6yYfgbljMNNwK4GA&usqp=CAU"></img>
-            </div>
             <div lassName={styles.navlink}>
                 {curuser ?
                     <h4 onClick={() => signOut()} className={styles.profile}>Sign out</h4> :

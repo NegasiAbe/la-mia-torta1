@@ -1,5 +1,5 @@
 .container {
-    padding-top: 50px;
+    padding-top: 10px;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -8,6 +8,14 @@
     height: atuo;
     width: 100%;
     text-align: center;
+    background-image: 'public/image/background-signup-img.jpg';
+    content: '';
+    display: block;
+    padding: 0 10% 0 0;
+    background-image: url('../public/image/bg.jpg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: fill;
   }
   .cardBody {
     margin: 0 10%;
@@ -40,9 +48,10 @@
     margin-bottom: 1.3rem;
     border: 3px solid #BDBDBD;
     border-radius: 5px;
+
   }
   .formControl:focus {
-    border: 3px solid #DD3173;
+    border: 3px solid green;
     outline: 0;
     box-shadow: none;
   }
@@ -58,7 +67,7 @@
   .btn:hover {
     color: white;
     font-size: large;
-    background-color: #DD3173;
+    background-color: green;
     border-color: #DF8C96;
     transition: .3s;
   }
