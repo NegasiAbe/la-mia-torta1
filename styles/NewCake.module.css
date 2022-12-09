@@ -17,8 +17,9 @@
   height: 100%;
   width:80%;
   flex-wrap: wrap;
-  margin: 0 10%;
+  margin: 10px 10% 0 10%;
   background-color: blueviolet;
+  border-radius: 15px 15px 0 0;
 }
 
 .cardBody {
@@ -43,11 +44,6 @@
 .container a:hover {
   color: #DD3173;
   text-decoration: none;
-}
-
-.card {
-  border: 0.40rem solid #F8F9FA;
-  top: 10%;
 }
 
 .formControl {
