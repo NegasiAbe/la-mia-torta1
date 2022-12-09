@@ -4,8 +4,6 @@ import { useState } from 'react'
 import Navbaker from '../../components/Navbaker'
 import { getSession } from 'next-auth/react';
 
-
-
 export default function NewCake(props) {
   const curUser = props.currentUser;
   const [url, setUrl] = useState('')

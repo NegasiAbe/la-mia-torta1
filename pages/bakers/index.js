@@ -16,12 +16,12 @@ export default function Home(props) {
     <>
       <Navbaker curuser={curUser}></Navbaker>
       <div className={styles.containerImg}>
-      <div className={styles.container}>
+        <div className={styles.container}>
 
-        <dev className={styles.cards}>
-          {cakes.map((cake, index) => (<h1 key={cake.id}><UpdateCard cake={cake} key={cake.id} /></h1>))}
-        </dev>
-      </div>
+          <div className={styles.cards}>
+            {cakes.map((cake, index) => (<UpdateCard cake={cake} key={cake.id} />))}
+          </div>
+        </div>
       </div>
     </>
   )
@@ -37,14 +37,14 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-  const email = "s@g.com"
-  session.user.email = email 
-  const owner = await db.User.findOne({where:{email:session.user.email}})
-  let cake= ''
-  if(owner){ 
-   cake = await db.Cake.findAll({where:{UserId:owner.id}})
+  /*const email = "s@g.com"
+  session.user.email = email */
+  const owner = await db.User.findOne({ where: { email: session.user.email } })
+  let cake = []
+  if (owner) {
+    cake = await db.Cake.findAll({ where: { UserId: owner.id } })
   }
-  else{
+  else {
     throw `There is no created cakes with user ${session.user.email}`
   }
   const stringfycakes = JSON.parse(JSON.stringify(cake))

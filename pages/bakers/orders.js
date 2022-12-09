@@ -6,20 +6,19 @@ import Card from '../../components/Card';
 import { getSession } from 'next-auth/react';
 
 export default function bakerOrder(props) {
-  const curUser = props.currentUser;
-  console.log(props)
 
+  const curUser = props.currentUser;
   //send the props current user to navbar componont 
   const orders = props.orders;
   return (
     <>
-      <Navbaker curuser={curUser}></Navbaker>
+      <Navbaker curuser={'curUser'}></Navbaker>
       <div className={styles.containerImg}>
-      <div className={styles.container}>    
-        <dev className={styles.cards}>
-          {orders.map(order => (<h1 key={order.id}><Card cake={order} key={order.id} /></h1>))}
-        </dev>
-      </div>
+        <div className={styles.container}>
+          <div className={styles.cards}>
+            {orders.map(order => (<Card cake={order} key={order.id} />))}
+          </div>
+        </div>
       </div>
     </>
   )
@@ -35,16 +34,16 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-   const email = "s@g.com"
+  const email = "s@g.com"
   session.user.email = email
-  let orders = ''
-  const owner = await db.User.findOne({where:{email:session.user.email}})
-  if(owner){
-    orders = await db.Order.findAll({where:{UserId:owner.id}})
-  }
-  else{
-    throw `There is no order with user ${session.user.email}`
-  }
+  const user = await db.User.findOne({where:{email:session.user.email}})
+
+  const orders = await db.Cake.findAll({ where:{UserId: user.id},
+    include: [{model: db.Order, include: db.User}]})
+
+console.log('orders of baker :', orders)
+
+console.log('the orders backend :',orders)
   const stringfyOrders = JSON.parse(JSON.stringify(orders))
 
   return {

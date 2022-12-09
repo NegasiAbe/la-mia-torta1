@@ -17,18 +17,18 @@ export default function Component(curuser) {
                 </Link>
             </div>
             <div className={styles.navlink}>
-                <Link href={`/baker/`}>
+                <Link href={`/bakers/`}>
                     <h4 className={styles.Home}>My Cakes</h4>
                 </Link>
             </div>
             <div className={styles.navlink}>
-                <Link href={`/baker/new`}>
+                <Link href={`/bakers/new`}>
                     <h4 className={styles.upload}>+upload</h4>
                 </Link>
             </div>
 
             <div className={styles.navlink}>
-                <Link href={`/baker/orders`}>
+                <Link href={`/bakers/orders`}>
                     <h4 className={styles.orders}>Orders</h4>
                 </Link>
             </div>
