@@ -1,7 +1,6 @@
 import styles from '../../../styles/Select.module.css'
 import Navbar from "../../../components/Navcustomer"
 import cakeController from '../../../controllers/cakeController'
-import { Input } from 'reactstrap'
 
 export default function oneCake(props) {
   const cakes = props.cake
