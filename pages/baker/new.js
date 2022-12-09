@@ -17,8 +17,6 @@ export default function NewCake(props) {
     setUrl(res.secure_url)
   }
 
-
-
 return (
     <>
       <div className={styles.container}>
