@@ -28,7 +28,7 @@ export default function oneCake(props) {
             </div>
             <div className={styles.detailsCul2}>
               <h4>Price: {cakes.price}$</h4>
-              <form method='GET' action='bakers/orders'>
+              <form method='GET' action='/bakers/orders'>
                 <input type="submit" className={styles.button} value="Order"/>
               </form>
             </div>
