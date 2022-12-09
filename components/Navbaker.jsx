@@ -16,7 +16,7 @@ export default function Component(curuser) {
             </div>
 
             <div className={styles.navlink}>
-                <Link href={`/`}>
+                <Link href={`/bakers/new`}>
                     <h4 className={styles.upload}>+upload</h4>
                 </Link>
             </div>

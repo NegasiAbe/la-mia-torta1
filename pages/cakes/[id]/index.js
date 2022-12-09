@@ -10,7 +10,6 @@ export default function oneCake(props) {
     <>
       <Navbar></Navbar>
       <div className={styles.container}>
-        <h3 className={styles.wording}>You are just one step away.....</h3>
         <div className={styles.slidShow}>
           <div className={styles.rowImg}>
             <div className={styles.columnImg1}>
@@ -30,7 +29,9 @@ export default function oneCake(props) {
             </div>
             <div className={styles.detailsCul2}>
               <h4>Price: {cakes.price}$</h4>
-              <input type="submit" className={styles.button} value="Order" />
+              <form method='GET' action='bakers/orders'>
+                <input type="submit" className={styles.button} value="Order"/>
+              </form>
             </div>
           </div>
         </div>

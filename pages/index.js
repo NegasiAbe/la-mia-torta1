@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 import db from '../database';
 import Card from '../components/Card';
-import Navbaker from '../components/Navbaker'
+import Navbaker from '../components/Navcustomer'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { getSession } from 'next-auth/react';
