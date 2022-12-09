@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 import db from '../database';
 import Card from '../components/Card';
-import Navbaker from '../components/Navbaker'
+import Navbaker from '../components/Navcustomer'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { getSession } from 'next-auth/react';
@@ -22,9 +22,9 @@ export default function Home(props) {
               <button className={styles.serachbutton} type="submit">Go</button>
             </form>
           </div>
-          <dev className={styles.cards}>
-            {cakes.map((cake, index) => (<h1 key={cake.id}><Card cake={cake} key={cake.id} /></h1>))}
-          </dev>
+          <div className={styles.cards}>
+            {cakes.map((cake, index) => (<Card cake={cake} key={cake.id} />))}
+          </div>
         </div>
       </div>
     </>

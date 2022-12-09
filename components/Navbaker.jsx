@@ -9,7 +9,6 @@ export default function Component(curuser) {
                 <img className={styles.navlogo} src="tortaImage/torta image.png"></img>
             </div>
 
-
             <div className={styles.navlink}>
                 <Link href={`/`}>
                     <h4 className={styles.Home}>Home</h4>
@@ -17,7 +16,7 @@ export default function Component(curuser) {
             </div>
 
             <div className={styles.navlink}>
-                <Link href={`/`}>
+                <Link href={`/bakers/new`}>
                     <h4 className={styles.upload}>+upload</h4>
                 </Link>
             </div>

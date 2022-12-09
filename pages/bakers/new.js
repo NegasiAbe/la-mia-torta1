@@ -1,5 +1,5 @@
 import styles from '../../styles/NewCake.module.css'
-import { Input } from 'reactstrap'
+import { Input, Navbar } from 'reactstrap'
 import { useState } from 'react'
 import Navbaker from '../../components/Navbaker'
 
@@ -19,12 +19,10 @@ export default function NewCake(props) {
 
   return (
     <>
-    <Navbaker></Navbaker>
-    <div className={styles.background}>
+      <Navbaker></Navbaker>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
-            <h2 className={styles.cardTitle}> <a href="../new">New Cake</a></h2>
             <div className={styles.cardBody}>
               <form method="POST" action="/api/cakes">
                 <div className={styles.formGroup}>
@@ -56,7 +54,6 @@ export default function NewCake(props) {
             </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   )

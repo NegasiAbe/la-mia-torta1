@@ -1,19 +1,25 @@
 /*Home page Start --disply the flats in home page--*/
 .containerImg {
-  content: '';
-  display: block;
+  flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
   padding: 0 10% 0 0;
   background-image: url('../public/image/bg.jpg');
   background-repeat: repeat;
   background-position: center;
   background-size: fill;
 }
+<<<<<<< HEAD
 
 .containerImg:before {
   position: relative;
 }
 
 .container {
+=======
+.container{
+>>>>>>> footer
   position: relative;
 }
 
@@ -56,6 +62,7 @@
 /*Just for serach end*/
 
 
+<<<<<<< HEAD
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -129,13 +136,17 @@
 }
 
 .grid {
+=======
+.cards{
+>>>>>>> footer
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  margin-top: 50px;
 }
 
+<<<<<<< HEAD
 .card {
   margin: 1rem;
   padding: 1.5rem;
@@ -197,3 +208,7 @@
 .heading {
   text-align: center;
 }
+=======
+/*Home page End --disply the flats in home page--*/
+
+>>>>>>> footer
