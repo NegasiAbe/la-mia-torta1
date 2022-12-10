@@ -2,7 +2,6 @@ import Link from "next/link"
 import styles from "../styles/Navbar.module.css"
 //import { Menu } from '@headlessui/react'
 import React from "react";
-import Image from "next/image";
 
 import { signIn, signOut } from "next-auth/react";
 
@@ -23,7 +22,7 @@ export default function Component({ curuser }) {
                 </Link>
             </div>
           
-            <div class="dropdown">                
+            <div className="dropdown">                
             {curuser ?
                     <h4 onClick={() => signOut()} value="action">Sign Out</h4>:
                     <h4 onClick={() => signIn()} value="action">Sign In</h4>

@@ -37,7 +37,12 @@
     width: 100%;
     margin-right: 50px;
 }
-
+.mycake{
+    flex: 1;
+    height: 7vh;
+    width: 100%;
+    margin-right: 50px;
+}
 .orders{
     flex: 1;
     height: 7vh;
