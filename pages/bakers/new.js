@@ -1,7 +1,7 @@
 import styles from '../../styles/NewCake.module.css'
-import { Input, Navbar } from 'reactstrap'
+import { Input} from 'reactstrap'
 import { useState } from 'react'
-import Navbaker from '../../components/Navbaker'
+import Navbar from '../../components/Navbar'
 import { getSession } from 'next-auth/react';
 
 export default function NewCake(props) {
@@ -21,12 +21,17 @@ export default function NewCake(props) {
 
   return (
     <>
-    <Navbaker curuser={curUser}></Navbaker>
+    <Navbar></Navbar>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
             <div className={styles.cardBody}>
               <form method="POST" action="/api/cakes">
+              <div className={styles.formGroup}>
+                  <label htmlFor="imgUploud" className={styles.label}>Upload Your Cake image </label><br />
+                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
+                  <input type="hidden" name='imageUrl' value={url} />
+                </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}></label><br />
                   <Input type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
@@ -43,11 +48,7 @@ export default function NewCake(props) {
                   <label htmlFor="location" className={styles.label}></label><br />
                   <Input type="text" name="location" className={styles.formControl} id="location" placeholder="address" />
                 </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="imgUploud" className={styles.label}>Upload Your Cake image </label><br />
-                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
-                  <input type="hidden" name='imageUrl' value={url} />
-                </div>
+                
                 <br />
                 <div className={styles.formGroup}>
                   <input type="submit" className={styles.btn} value="Submit" /><br />

@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 import db from '../database';
 import Card from '../components/Card';
-import Navbaker from '../components/Navcustomer'
+import Navbar from '../components/Navbar'
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { getSession } from 'next-auth/react';
@@ -12,7 +12,7 @@ export default function Home(props) {
   const cakes = props.cakes;
   return (
     <>
-      <Navbaker curuser={curUser}></Navbaker>
+      <Navbar></Navbar>
       <div className={styles.containerImg}>
         <div className={styles.container}>
           <div className={styles.searchForm}>
