@@ -3,6 +3,7 @@ import { Input, Navbar } from 'reactstrap'
 import { useState } from 'react'
 import Navbaker from '../../components/Navbaker'
 import { getSession } from 'next-auth/react';
+import userController from '../../controllers/userController'
 
 export default function NewCake(props) {
   const curUser = props.currentUser;
@@ -29,7 +30,7 @@ export default function NewCake(props) {
               <form method="POST" action="/api/cakes">
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}></label><br />
-                  <Input type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
+                  <Input type="text" required name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="description" className={styles.label}></label><br />
@@ -47,6 +48,7 @@ export default function NewCake(props) {
                   <label htmlFor="imgUploud" className={styles.label}>Upload Your Cake image </label><br />
                   <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
                   <input type="hidden" name='imageUrl' value={url} />
+                  <input type="hidden" name='UserId' value={curUser.id} />
                 </div>
                 <br />
                 <div className={styles.formGroup}>
@@ -65,6 +67,7 @@ export default function NewCake(props) {
 
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
+ 
   if (!session) {
     return {
       redirect: {
@@ -74,8 +77,8 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-
+      const user= await userController.getUserByEmail(session.user)
   return {
-    props: { currentUser: session?.user || null },
+    props: { currentUser: user || null },
   }
 }
