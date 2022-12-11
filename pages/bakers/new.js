@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar'
 import { getSession } from 'next-auth/react';
 
 export default function NewCake(props) {
-  const curUser = props.currentUser;
+  const curUser = props.currentUser
   const [url, setUrl] = useState('')
   const handlimgUpload = async (event) => {
     const file = event.target.files[0]
@@ -21,7 +21,7 @@ export default function NewCake(props) {
 
   return (
     <>
-    <Navbar></Navbar>
+    <Navbar curuser={curUser}></Navbar>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
@@ -33,6 +33,7 @@ export default function NewCake(props) {
                   <input type="hidden" name='imageUrl' value={url} />
                 </div>
                 <div className={styles.formGroup}>
+                  <input type="hidden" name='usersession' value={curUser.email} />
                   <label htmlFor="name" className={styles.label}></label><br />
                   <Input type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
                 </div>
@@ -62,8 +63,6 @@ export default function NewCake(props) {
   )
 }
 
-
-
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
   if (!session) {
@@ -75,7 +74,6 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-
   return {
     props: { currentUser: session?.user || null },
   }
