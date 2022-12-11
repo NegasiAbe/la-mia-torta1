@@ -5,7 +5,6 @@
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 10% 0 0;
-  background-image: url('/public/image/bg.jpg');
   background-repeat: repeat;
   background-position: center;
   background-size: fill;
@@ -63,3 +62,15 @@
 
 /*Home page End --disply the flats in home page--*/
 
+@media(max-width:768px) {
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+  }
+
+
+}

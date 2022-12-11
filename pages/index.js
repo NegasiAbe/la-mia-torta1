@@ -1,11 +1,12 @@
 import styles from '../styles/Home.module.css';
 import db from '../database';
 import Card from '../components/Card';
-import Navbaker from '../components/Navcustomer'
 import Sendemail from '../components/Sendemail'
 import React from "react";
 /* import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css'; */
+import Navbar from '../components/Navbar'
+import { useEffect, useState } from "react";
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 import { getSession } from 'next-auth/react';
 
@@ -14,6 +15,9 @@ export default function Home(props) {
   //send the props current user to navbar componont 
   console.log(curUser)
   const cakes = props.cakes;
+
+  const [query, setQuery] = useState("");
+  
   return (
     <>
       {props.new ? 
@@ -22,7 +26,7 @@ export default function Home(props) {
         </div> :
         <h6></h6>
      }
-      <Navbaker curuser={curUser}></Navbaker>
+      <Navbar curuser={curUser}></Navbar>
       <div className={styles.containerImg}>
         <div className={styles.container}>
           <div className={styles.searchForm}>
@@ -32,7 +36,7 @@ export default function Home(props) {
               <button className={styles.serachbutton} type="submit">Go</button>
             </form>
           </div>
-          <div className={styles.cards}>
+          <div className={styles.cards}>            
             {cakes.map((cake, index) => (<Card cake={cake} key={cake.id} />))}
           </div>
         </div>

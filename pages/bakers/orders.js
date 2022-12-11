@@ -1,5 +1,5 @@
 import styles from '../../styles/Baker.module.css';
-import Navbaker from '../../components/Navbaker';
+import Navbar from '../../components/Navbar';
 import db from '../../database';
 import OrdersCard from '../../components/OrdersCard';
 import { getSession } from 'next-auth/react';
@@ -11,8 +11,7 @@ export default function bakerOrder(props) {
   /* {console.log(orders)} */
   return (
     <>
-      <Navbaker curuser={'curUser'}></Navbaker>
-      <br /><br />
+      <Navbar curuser = {curUser}></Navbar>
       <div className={styles.containerImg}>
         <div className={styles.container}>
           <div className={styles.cards}>
@@ -21,7 +20,7 @@ export default function bakerOrder(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)

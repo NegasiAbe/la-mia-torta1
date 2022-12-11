@@ -1,20 +1,18 @@
 .container{
-  margin-top: -20px;
-  background-image: url('../public/image/bg.jpg');
-  background-repeat: repeat;
-  background-position: center;
-  background-size: fill;
+  width: 100%;
 }
 .wording{
   text-align: center;
   color: blueviolet;
+  
 }
 .slidShow{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 500px;
+  height: 400px;
   width: 100%;
+  margin-top: 20px;
 }
 .rowImg{
   display: flex;
@@ -160,4 +158,14 @@ form .button {
 
 form .button:hover {
   background-color: blueviolet;
+}
+@media(max-width:768px) {
+  .slidShow{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+  }
 }

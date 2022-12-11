@@ -1,5 +1,5 @@
 import styles from '../../../styles/Select.module.css'
-import Navbar from "../../../components/Navcustomer"
+import Navbar from "../../../components/Navbar"
 import cakeController from '../../../controllers/cakeController'
 
 export default function oneCake(props) {

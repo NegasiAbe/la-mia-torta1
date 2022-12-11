@@ -2,7 +2,7 @@ import styles from '../../styles/Baker.module.css';
 //import Navbaker from '../../components/navbaker';
 import db from '../../database';
 import UpdateCard from '../../components/UpdateCard';
-import Navbaker from '../../components/Navbaker'
+import Navbar from '../../components/Navbar';
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 
 import { getSession } from 'next-auth/react';
@@ -14,7 +14,7 @@ export default function Home(props) {
   const cakes = props.cakes;
   return (
     <>
-      <Navbaker curuser={curUser}></Navbaker>
+      <Navbar></Navbar>
       <div className={styles.containerImg}>
         <div className={styles.container}>
 
