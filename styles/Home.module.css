@@ -6,10 +6,13 @@
   margin: 0 auto;
   padding: 0 10% 0 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-image: url('/public/image/bg.jpg');
 =======
   background-image: url('../public/image/bg.jpg');
 >>>>>>> hassani
+=======
+>>>>>>> f8b9ac9bc1b907ebc132c469de27de5d4c7520f2
   background-repeat: repeat;
   background-position: center;
   background-size: fill;
@@ -67,3 +70,15 @@
 
 /*Home page End --disply the flats in home page--*/
 
+@media(max-width:768px) {
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+  }
+
+
+}

@@ -1,11 +1,11 @@
 import styles from '../../styles/NewCake.module.css'
-import { Input, Navbar } from 'reactstrap'
+import { Input} from 'reactstrap'
 import { useState } from 'react'
-import Navbaker from '../../components/Navbaker'
+import Navbar from '../../components/Navbar'
 import { getSession } from 'next-auth/react';
 
 export default function NewCake(props) {
-  const curUser = props.currentUser;
+  const curUser = props.currentUser
   const [url, setUrl] = useState('')
   const handlimgUpload = async (event) => {
     const file = event.target.files[0]
@@ -21,13 +21,19 @@ export default function NewCake(props) {
 
   return (
     <>
-    <Navbaker curuser={curUser}></Navbaker>
+    <Navbar curuser={curUser}></Navbar>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
             <div className={styles.cardBody}>
               <form method="POST" action="/api/cakes">
+              <div className={styles.formGroup}>
+                  <label htmlFor="imgUploud" className={styles.label}>Upload Your Cake image </label><br />
+                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
+                  <input type="hidden" name='imageUrl' value={url} />
+                </div>
                 <div className={styles.formGroup}>
+                  <input type="hidden" name='usersession' value={curUser.email} />
                   <label htmlFor="name" className={styles.label}></label><br />
                   <Input type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
                 </div>
@@ -43,11 +49,7 @@ export default function NewCake(props) {
                   <label htmlFor="location" className={styles.label}></label><br />
                   <Input type="text" name="location" className={styles.formControl} id="location" placeholder="address" />
                 </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="imgUploud" className={styles.label}>Upload Your Cake image </label><br />
-                  <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload}/>
-                  <input type="hidden" name='imageUrl' value={url} />
-                </div>
+                
                 <br />
                 <div className={styles.formGroup}>
                   <input type="submit" className={styles.btn} value="Submit" /><br />
@@ -61,8 +63,6 @@ export default function NewCake(props) {
   )
 }
 
-
-
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
   if (!session) {
@@ -74,7 +74,6 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-
   return {
     props: { currentUser: session?.user || null },
   }
