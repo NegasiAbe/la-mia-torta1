@@ -1,6 +1,6 @@
 import styles from "../styles/Navbar.module.css";
 import { signIn, signOut } from "next-auth/react";
-
+import Image from "next/image";
 export default function Component() {
     /*const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".navMenu");
@@ -17,7 +17,9 @@ export default function Component() {
         <>
             <div className={styles.container}>
                 <nav className={styles.nav}>
-                    <a href="/" className={styles.navBranding}></a>
+                    <div >
+                    <a href="/" ><Image src="https://res.cloudinary.com/dlmrmq1tl/image/upload/v1670770166/LaMiaTorta/logo-withoutBG_sbnqri.png" height="200" width="200" className={styles.navBranding}/></a>
+                    </div>
                     <ul className={styles.navMenu}>
                         <li className={styles.navItem}>
                             <a href="/" className={styles.navLink}>Home</a>

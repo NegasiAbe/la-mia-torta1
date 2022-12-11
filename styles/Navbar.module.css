@@ -18,13 +18,8 @@
 }
 
 .navBranding {
-    color: white;
-    text-decoration: none;
-    list-style: none;
-    height: 70px;
-    width: 10%;
-    border: 1px solid white;
-    background-image: url("../public/image/logo-withoutBG.png");
+    height: 100px;
+    width: 100%;
 }
 
 .navLink {

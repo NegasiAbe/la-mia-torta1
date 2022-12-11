@@ -29,7 +29,7 @@ export default function Home(props) {
           </div>
           <div className={styles.cards}>
             
-            <table className={styles.list}>
+            {/* <table className={styles.list}>
               {cakes.filter(cake => cake.name.toLowerCase().includes(query) || 
                                     cake.description.toLowerCase().includes(query) || 
                                     cake.location.toLowerCase().includes(query)).map((cake) => (
@@ -40,7 +40,7 @@ export default function Home(props) {
                   <th>{cake.location}</th>
                 </tr>
               ))}
-            </table>
+            </table> */}
             
             {cakes.map((cake, index) => (<Card cake={cake} key={cake.id} />))}
           </div>
