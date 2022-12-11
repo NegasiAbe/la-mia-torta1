@@ -3,16 +3,25 @@ import db from '../database';
 import Card from '../components/Card';
 import Navbaker from '../components/Navcustomer'
 import Sendemail from '../components/Sendemail'
+import React from "react";
+/* import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css'; */
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 import { getSession } from 'next-auth/react';
-import React from "react";
 
 export default function Home(props) {
   const curUser = props.currentUser
   //send the props current user to navbar componont 
+  console.log(curUser)
   const cakes = props.cakes;
   return (
     <>
+      {props.new ? 
+        <div class="alert alert-info" role="alert">
+          Your Initial Password is : {props.pswd}
+        </div> :
+        <h6></h6>
+     }
       <Navbaker curuser={curUser}></Navbaker>
       <div className={styles.containerImg}>
         <div className={styles.container}>
@@ -49,19 +58,21 @@ export async function getServerSideProps(req, res) {
   }
 
   let firstlogin = 0;
+  let password = 'abcd1234';
 
   const user = await db.User.findOne({ where: { email: session.user.email } })
   if (!user) {
     const name = session.user.name
     const email = session.user.email
-    const password = 'Abcd?1234'
+    password = Math.random().toString(36).slice(-8)
     await db.User.create({ name, email, password })
     firstlogin = 1
+    /*  alert(`Thank you ${name} for trusting in us your password is ${password}`); */
   }
   const cakes = await db.Cake.findAll()
   const stringfycakes = JSON.parse(JSON.stringify(cakes))
 
   return {
-    props: { new: firstlogin, cakes: stringfycakes, currentUser: session?.user || null },
+    props: { pswd: password, new: firstlogin, cakes: stringfycakes, currentUser: session?.user || null },
   }
 }
