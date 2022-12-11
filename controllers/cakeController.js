@@ -1,3 +1,4 @@
+
 import db from '../database'
 
 const cakesController = {
@@ -13,11 +14,16 @@ const cakesController = {
     return parsedCake
   },
   create: async (data) => {
-    const cake = await db.Cake.create({
-        name, description, price, location, imageUrl, UserId
-    })
+    console.log(db.models)
+    const cake = await db.Cake.create(data)
     return JSON.parse(JSON.stringify(cake))
-  }
+  },
+  
+  update: async (id, data) => {
+    const cake = await db.Cake.findByPk(id)
+    cake.update(data)
+    return JSON.parse(JSON.stringify(cake))
+  },
   
 }
 
