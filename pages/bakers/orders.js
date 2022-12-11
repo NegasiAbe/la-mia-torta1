@@ -1,5 +1,5 @@
 import styles from '../../styles/Baker.module.css';
-import Navbaker from '../../components/Navbaker';
+import Navbar from '../../components/Navbar';
 import db from '../../database';
 import Card from '../../components/Card';
 
@@ -12,7 +12,7 @@ export default function bakerOrder(props) {
   const orders = props.orders;
   return (
     <>
-      <Navbaker curuser={'curUser'}></Navbaker>
+      <Navbar></Navbar>
       <div className={styles.containerImg}>
         <div className={styles.container}>
           <div className={styles.cards}>

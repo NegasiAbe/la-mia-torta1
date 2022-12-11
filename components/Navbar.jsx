@@ -17,16 +17,23 @@ export default function Component() {
         <>
             <div className={styles.container}>
                 <nav className={styles.nav}>
-                    <a href="/" className={styles.navBranding}>Logo</a>
+                    <a href="/" className={styles.navBranding}></a>
                     <ul className={styles.navMenu}>
                         <li className={styles.navItem}>
                             <a href="/" className={styles.navLink}>Home</a>
                         </li>
                         <li className={styles.navItem}>
-                            <a href="/bakers" className={styles.navLink}>My Account</a>
-                        </li>
-                        <li className={styles.navItem}>
-                            <a href="/" onClick={() => signOut()} value="action" className={styles.navLink}>Log out</a>
+                            <div className={styles.dropdown}>
+                                <button className={styles.dropbtn}>My Account
+                                    <i class="fa fa-caret-down">   ▼</i>
+                                </button>
+                                <div className={styles.dropdownContent}>
+                                <a href="/bakers">Profile</a>
+                                <a href="/bakers/new">Add New Cake</a>
+                                <a href="/bakers/orders">Orders</a>
+                                <a href="/" onClick={() => signOut()} value="action">Log out</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <div className={styles.hamburger}>
