@@ -23,7 +23,11 @@ const cakesController = {
     cake.update(data)
     return JSON.parse(JSON.stringify(cake))
   },
-  
+  delete: async (id) => {
+    const cake = await db.Cake.findByPk(id)
+    cake.destroy()
+    return JSON.parse(JSON.stringify(cake))
+  },
 }
 
 export default cakesController

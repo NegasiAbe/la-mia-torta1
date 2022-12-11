@@ -3,6 +3,7 @@ import { Input} from 'reactstrap'
 import { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import { getSession } from 'next-auth/react';
+import userController from '../../controllers/userController'
 
 export default function NewCake(props) {
   const curUser = props.currentUser
@@ -35,7 +36,7 @@ export default function NewCake(props) {
                 <div className={styles.formGroup}>
                   <input type="hidden" name='usersession' value={curUser.email} />
                   <label htmlFor="name" className={styles.label}></label><br />
-                  <Input type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
+                  <Input type="text" required name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="description" className={styles.label}></label><br />
@@ -65,6 +66,7 @@ export default function NewCake(props) {
 
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
+ 
   if (!session) {
     return {
       redirect: {
@@ -75,6 +77,6 @@ export async function getServerSideProps(req, res) {
     }
   }
   return {
-    props: { currentUser: session?.user || null },
+    props: { currentUser: user || null },
   }
 }
