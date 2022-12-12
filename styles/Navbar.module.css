@@ -28,7 +28,8 @@
 }
 
 .navLink:hover {
-    color: black;
+    text-shadow: 1px 1px 10px white;
+    transition: 0.8s;
 }
 
 .navItem {
@@ -76,6 +77,7 @@
     text-align: left;
 }
 
+
 .dropdownContent a:hover {
     background-color: blueviolet;
 }
@@ -85,7 +87,8 @@
 }
 
 .dropdown:hover .dropbtn {
-    color: black;
+    text-shadow: 1px 1px 10px white;
+    transition: 0.8s;
 }
 
 
