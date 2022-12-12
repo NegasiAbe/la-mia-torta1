@@ -7,11 +7,11 @@ export default function Order (props) {
     return (
         <>
         <Navbar></Navbar>
-        <h2 className= {styles.payment}>Thankyou for your Orders</h2>
-
-        <form method='POST' action='/api/orders/confirmation'>
-        <div className= {styles.details}>
+        <h2 className= {styles.payment}>Confirm and Pay for your Chosen Cake... </h2>
             <h3 className={styles.summary}>Order Summary</h3>
+
+        <form method='POST' action='/orders/payment'>
+        <div className= {styles.details}>
             <h4>orderID#{order.id}</h4>
             <h4>cake is:{order.Cake.name}</h4>
             <h4>status: {order.status}</h4>
@@ -23,14 +23,12 @@ export default function Order (props) {
 }
 
 export  async function getServerSideProps(req, res) {
-    // select the order by id 
-    //select the cake
-    //pass as props
+   
     const { id } = req.query
-
     const order = await ordersController.find(id);
     return {
-      props: { order },
+        props: { order },
     }
+
   } 
  
