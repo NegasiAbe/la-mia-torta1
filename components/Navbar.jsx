@@ -18,7 +18,7 @@ export default function Component() {
             <div className={styles.container}>
                 <nav className={styles.nav}>
                     <div >
-                    <a href="/" ><Image src="https://res.cloudinary.com/dlmrmq1tl/image/upload/v1670770166/LaMiaTorta/logo-withoutBG_sbnqri.png" height="200" width="200" className={styles.navBranding}/></a>
+                    <a href="/" ><Image src="https://res.cloudinary.com/dlmrmq1tl/image/upload/v1670770166/LaMiaTorta/logo-withoutBG_sbnqri.png" height="200" width="200" alt="logo" className={styles.navBranding}/></a>
                     </div>
                     <ul className={styles.navMenu}>
                         <li className={styles.navItem}>
@@ -27,12 +27,13 @@ export default function Component() {
                         <li className={styles.navItem}>
                             <div className={styles.dropdown}>
                                 <button className={styles.dropbtn}>My Account
-                                    <i class="fa fa-caret-down">   ▼</i>
+                                    <i className="fa fa-caret-down">   ▼</i>
                                 </button>
                                 <div className={styles.dropdownContent}>
                                 <a href="/bakers">Profile</a>
                                 <a href="/bakers/new">Add New Cake</a>
                                 <a href="/bakers/orders">Orders</a>
+                                <a href="/profile">Change Passwrod</a>
                                 <a href="/" onClick={() => signOut()} value="action">Log out</a>
                                 </div>
                             </div>

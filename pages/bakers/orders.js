@@ -13,11 +13,11 @@ export default function bakerOrder(props) {
   return (
     <>
       <Navbar></Navbar>
-      <div className={styles.containerImg}>
-        <div className={styles.container}>
-          <div className={styles.cards}>
-            {orders.map(order => (<Card cake={order} key={order.id} />))}
-          </div>
+      <div className={styles.container1}>
+        <div className={styles.containerImg}>
+            <div className={styles.cards}>
+              {orders.map(order => (<Card cake={order} key={order.id} />))}
+            </div>
         </div>
       </div>
     </>
@@ -36,14 +36,16 @@ export async function getServerSideProps(req, res) {
   }
   const email = "z@a.com"
   session.user.email = email
-  const user = await db.User.findOne({where:{email:session.user.email}})
+  const user = await db.User.findOne({ where: { email: session.user.email } })
 
-  const orders = await db.Cake.findAll({ where:{UserId: user.id},
-    include: [{model: db.Order, include: db.User}]})
+  const orders = await db.Cake.findAll({
+    where: { UserId: user.id },
+    include: [{ model: db.Order, include: db.User }]
+  })
 
-console.log('orders of baker :', orders)
+  console.log('orders of baker :', orders)
 
-console.log('the orders backend :',orders)
+  console.log('the orders backend :', orders)
   const stringfyOrders = JSON.parse(JSON.stringify(orders))
 
   return {

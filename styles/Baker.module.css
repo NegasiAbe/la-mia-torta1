@@ -1,125 +1,22 @@
-.card {
-  display: flex;
-  flex-wrap: wrap;
+.containerImg {
   flex-direction: column;
   text-align: center;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0 0 10% 10%;
+  padding: 0 10% 0 0;
   background-repeat: repeat;
   background-position: center;
   background-size: fill;
-  height: 100%;
-  width: 50%;
 }
-
-.cardimg {
-  border: 1px solid blueviolet;
-  border-radius: 15px 15px 0 0;
-  padding: 0 0;
-  transition: 0.5s;
-  height: 300px;
-}
-.cardimg1 {
-  border-radius: 15px 15px 0 0;
-  width: 100%;
-  height: auto;
-  object-fit: fill;
-  transition: 0.5s;
-  background-color: blue;
-}
-.cardimg:hover {
-  box-shadow: 0px 0px 10px 0.5px blueviolet;
+.container{
+  position: relative;
 }
 
 
-.cardDetails {
+.cards{
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  flex-direction: row;
-  text-align: left;
-  max-width: 1500px;
-  background-color: blueviolet;
-  height: 100%;
-  width: 100%;
-}
-
-
-.topDetails{
-  width: 80%;
-}
-.cardDetails h5 {
-  margin: 10px 0 0 10px;
-  font-size: 15px;
-  color: white;
-}
-.cardDetails p {
-  display: grid;
-  margin-left: 10px;
-  color: white;
-  font-size: 15px;
-  font-weight: 400;
-  text-align: justify;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-}
-
-
-.downDetails{
-  width: 20%;
-  margin-top: 15vh;
-  margin-bottom: 1vh;
-}
-.selectOne {
-  color: white;
-  text-align: center;
-  font-size: 15px;
-}
-
-.button {
-  width: 90%;
-  padding: 5px 0;
-  margin: 5px 0;
-  background-color: rgb(247, 145, 206);
-  border: 1px solid blueviolet;
-  border-radius: 5px;
-  box-shadow: 1px 2px 5px 1px black;
-  transition: 0.5s;
-}
-
-.button:hover {
-  background-color: blueviolet;
-}
-
-@media(max-width:768px) {
-  .cardimg {
-    height: 100px;
-    background-size: cover;
-  }
-  .cardDetails {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    max-width: 1000px;
-    height: auto;
-  }
-  .downDetails{
-    align-items: center;
-    width: 100%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-  }
-  .button {
-    width: 30%;
-    font-size: 10px;
-    background-color: rgb(247, 145, 206);
-    border: 1px solid blueviolet;
-    border-radius: 10px;
-    box-shadow: 1px 2px 5px 1px black;
-    transition: 0.5s;
-  }
-
+  margin-top: 50px;
 }
