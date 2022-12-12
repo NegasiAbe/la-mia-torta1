@@ -14,6 +14,7 @@ export default function Home(props) {
   const [query, setQuery] = useState("");
   const [cakes, setCakes] = useState(props.cakes);
   useEffect(() => {
+    //if(query.length === 0 || query.length > 0)
     setCakes(props.cakes.filter(cake => cake.name.toLowerCase().includes(query) || 
     cake.description.toLowerCase().includes(query) || 
     cake.location.toLowerCase().includes(query)))
@@ -29,7 +30,6 @@ export default function Home(props) {
           </div>
           <div className={styles.cards}>
             {cakes.map((cake, index) => (<Card cake={cake} key={cake.id} />))}
-            
           </div>
         </div>
       </div>
