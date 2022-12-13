@@ -60,6 +60,8 @@ export async function getServerSideProps(req, res) {
   let firstlogin = 0;
   let password = 'abcd1234';
 
+  console.log("the user in index is :", session.user.email)
+
   const user = await db.User.findOne({ where: { email: session.user.email } })
   if (!user) {
     const name = session.user.name
@@ -71,7 +73,6 @@ export async function getServerSideProps(req, res) {
   }
   const cakes = await db.Cake.findAll()
   const stringfycakes = JSON.parse(JSON.stringify(cakes))
-  console.log('i am called from payment backend')
   return {
     props: { pswd: password, new: firstlogin, cakes: stringfycakes, currentUser: session?.user || null },
   }
