@@ -7,8 +7,7 @@ import { getSession } from 'next-auth/react';
 export default function customerOrder(props) {
     const curUser = props.currentUser;
     //send the props current user to navbar componont 
-    const orders = props.orders;
-    console.log('the orders of a customer are', orders)
+    const orders = props.orders.Cake;
     /* {console.log(orders)} */
     return (
         <>
