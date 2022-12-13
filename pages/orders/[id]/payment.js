@@ -8,8 +8,6 @@ import { getSession } from 'next-auth/react'
 export default function payment(props) {
   const order = props.order
 
-    console.log(props.currentUser)
-
     return (
         <>
             <Navbar></Navbar>

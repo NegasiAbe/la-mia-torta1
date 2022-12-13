@@ -4,7 +4,6 @@ import cakeController from '../../../controllers/cakeController'
 
 export default function oneCake(props) {
   const cake = props.cake
-  console.log('Hello url', cake)
   return (
     <>
       <Navbar></Navbar>
