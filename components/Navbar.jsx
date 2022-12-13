@@ -21,12 +21,12 @@ export default function Component() {
                                     <i className="fa fa-caret-down">   ▼</i>
                                 </button>
                                 <div className={styles.dropdownContent}>
-                                <a href="/bakers">Profile</a>
-                                <a href="/bakers/new">Add New Cake</a>
-                                <a href="/bakers/orders">My Orders</a>
-                                <a href="/profiles/orders">My Requests</a>
-                                <a href="/profiles">Edit Profile</a>
-                                <a href="/" onClick={() => signOut()} value="action">Log out</a>
+                                <Link href="/bakers">Profile</Link>
+                                <Link href="/bakers/new">Add New Cake</Link>
+                                <Link href="/bakers/orders">My Orders</Link>
+                                <Link href="/profiles/orders">My Requests</Link>
+                                <Link href="/profiles">Edit Profile</Link>
+                                <Link href="/" onClick={() => signOut()} value="action">Log out</Link>
                                 </div>
                             </div>
                         </li>
