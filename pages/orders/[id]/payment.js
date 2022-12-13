@@ -7,12 +7,12 @@ import { getSession } from 'next-auth/react'
 
 export default function payment(props) {
   const order = props.order
-
+  const curUser = props.currentUser
     console.log(props.currentUser)
 
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar curuser={curUser}></Navbar>
             <h2 className={styles.payment}>Payment Method</h2>
 
             <div className={styles.containerwrap}>
