@@ -2,10 +2,14 @@ import cakesController from '../../../controllers/cakeController'
 import styles from '../../../styles/NewCake.module.css'
 import { Input } from 'reactstrap'
 import { useState } from 'react'
+import Navbar from '../../../components/Navbar';
+import { getSession } from 'next-auth/react';
 
-export default function NewCake({ cake }) {
+
+export default function NewCake(props) {
+  const cake = props.cake
   const [url, setUrl] = useState(cake.imageUrl)
-
+  const curUser = props.currentUser
   const handlimgUpload = async (event) => {
     const file = event.target.files[0]
     const imageForm = new FormData()
@@ -20,12 +24,13 @@ export default function NewCake({ cake }) {
 
   return (
     <>
+      <Navbar curuser={curUser}></Navbar>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
-            <h2 className={styles.cardTitle}> Edite your cake here</h2>
+            <h2 className={styles.cardTitle}> Edit your cake here</h2>
             <div className={styles.cardBody}>
-              <form method="POST" action={`/api/cakes/${cake.id}`}>
+              <form method="POST" action='/bakers/'>
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>Name:</label><br />
                   <Input defaultValue={cake.name} type="text" name='name' className={styles.formControl} id="name" placeholder="Name of the cake" />
@@ -65,9 +70,20 @@ export default function NewCake({ cake }) {
 }
 
 export async function getServerSideProps(req, res) {
+  const session = await getSession(req) //await getSession(req)
+  if (!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: `/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`
+        //change the destination default login in to cusotm login
+      }
+    }
+  }
+
   const { id } = req.query
   const cake = await cakesController.find(id)
   return {
-    props: { cake },
+    props: { cake, currentUser: session?.user || null },
   }
 }

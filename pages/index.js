@@ -13,30 +13,26 @@ import { getSession } from 'next-auth/react';
 export default function Home(props) {
   const curUser = props.currentUser
   //send the props current user to navbar componont 
-  console.log(curUser)
-  const cakes = props.cakes;
-
+  
   const [query, setQuery] = useState("");
+  const [cakes, setCakes] = useState(props.cakes);
+  useEffect(() => {
+    //if(query.length === 0 || query.length > 0)
+    setCakes(props.cakes.filter(cake => cake.name.toLowerCase().includes(query) || 
+    cake.description.toLowerCase().includes(query) || 
+    cake.location.toLowerCase().includes(query)))
+  }, [query])
   
   return (
     <>
-      {props.new ? 
-        <div class="alert alert-info" role="alert">
-          Your Initial Password is : {props.pswd}
-        </div> :
-        <h6></h6>
-     }
       <Navbar curuser={curUser}></Navbar>
       <div className={styles.containerImg}>
         <div className={styles.container}>
-          <div className={styles.searchForm}>
-            <form className={styles.serachForm} onSubmit="event.preventDefault();" role="search">
-              <label className={styles.serachlabel} htmlFor="search">Serach you Cake in here ...</label>
-              <input className={styles.serachinput} id="search" type="search" placeholder="Search..." autoFocus required />
-              <button className={styles.serachbutton} type="submit">Go</button>
-            </form>
+          <div className={styles.searchBar}>
+            <h4 className={styles.searchTitle}>search your favorite cake here:</h4>
+            <input className={styles.search} type="text" placeholder="Search..."  onChange={(e) => setQuery(e.target.value)}/>
           </div>
-          <div className={styles.cards}>            
+          <div className={styles.cards}>
             {cakes.map((cake, index) => (<Card cake={cake} key={cake.id} />))}
           </div>
         </div>
@@ -75,7 +71,7 @@ export async function getServerSideProps(req, res) {
   }
   const cakes = await db.Cake.findAll()
   const stringfycakes = JSON.parse(JSON.stringify(cakes))
-
+  console.log('i am called from payment backend')
   return {
     props: { pswd: password, new: firstlogin, cakes: stringfycakes, currentUser: session?.user || null },
   }

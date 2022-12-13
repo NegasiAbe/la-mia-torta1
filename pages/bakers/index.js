@@ -12,16 +12,16 @@ export default function Home(props) {
 
   //send the props current user to navbar componont 
   const cakes = props.cakes;
-  console.log(curUser)
-  console.log(cakes)
+  
   return (
     <>
       <Navbar></Navbar>
-      <div className={styles.containerImg}>
-        <div className={styles.container}>
-
-          <div className={styles.cards}>
-            {cakes.map((cake, index) => (<UpdateCard cake={cake} key={cake.id} />))}
+      <div className={styles.container1}>
+        <div className={styles.containerImg}>
+          <div className={styles.container}>
+            <div className={styles.cards}>
+              {cakes.map((cake, index) => (<UpdateCard cake={cake} key={cake.id} />))}
+            </div>
           </div>
         </div>
       </div>

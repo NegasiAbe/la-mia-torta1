@@ -1,5 +1,6 @@
 import styles from "../styles/Navbar.module.css";
 import { signIn, signOut } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Component() {
@@ -7,7 +8,9 @@ export default function Component() {
         <>
             <div className={styles.container}>
                 <nav className={styles.nav}>
-                    <Link href="/" className={styles.navBranding}/>
+                    <div >
+                    <Link href="/" ><Image src="https://res.cloudinary.com/dlmrmq1tl/image/upload/v1670770166/LaMiaTorta/logo-withoutBG_sbnqri.png" height="200" width="200" alt="logo" className={styles.navBranding}/></Link>
+                    </div>
                     <ul className={styles.navMenu}>
                         <li className={styles.navItem}>
                             <Link href="/" className={styles.navLink}>Home</Link>
@@ -15,12 +18,14 @@ export default function Component() {
                         <li className={styles.navItem}>
                             <div className={styles.dropdown}>
                                 <button className={styles.dropbtn}>My Account
-                                    <i class="fa fa-caret-down">   ▼</i>
+                                    <i className="fa fa-caret-down">   ▼</i>
                                 </button>
                                 <div className={styles.dropdownContent}>
                                 <Link href="/bakers">Profile</Link>
                                 <Link href="/bakers/new">Add New Cake</Link>
-                                <Link href="/bakers/orders">Orders</Link>
+                                <Link href="/bakers/orders">My Orders</Link>
+                                <Link href="/profiles/orders">My Requests</Link>
+                                <Link href="/profiles">Edit Profile</Link>
                                 <Link href="/" onClick={() => signOut()} value="action">Log out</Link>
                                 </div>
                             </div>

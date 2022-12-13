@@ -1,7 +1,6 @@
 //disply orders by customer
-
 import styles from '../styles/Baker.module.css';
-import Navcustomer from '../components/Navcustomer';
+import Navbar from '../components/Navbar';
 import db from '../database';
 import Card from '../components/Card';
 
@@ -15,7 +14,7 @@ export default function bakerOrder(props) {
   const orders = props.orders;
   return (
     <>
-      <Navcustomer curuser={curUser}></Navcustomer>
+      <Navbar curuser={curUser}></Navbar>
       <div className={styles.containerImg}>
       <div className={styles.container}>    
         <div className={styles.cards}>
@@ -37,8 +36,8 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-   const email = "s@g.com"
-  session.user.email = email
+   //const email = "s@g.com"
+  //session.user.email = email
   const customer = await db.User.findOne({where:{email:session.user.email}})
 
   const orders = await db.Order.findAll({ where:{UserId: customer.id}})
