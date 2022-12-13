@@ -6,7 +6,6 @@
 .searchTitle{
   color: blueviolet;
   margin: 0;
-  
 }
 
 .searchBar{
@@ -30,8 +29,6 @@
   margin: 0 auto;
   padding: 0 10% 0 0;
 }
-
-
 .cards{
   display: flex;
   align-items: center;
