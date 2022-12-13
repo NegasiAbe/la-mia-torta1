@@ -23,8 +23,9 @@ export default function Component() {
                                 <div className={styles.dropdownContent}>
                                 <Link href="/bakers">Profile</Link>
                                 <Link href="/bakers/new">Add New Cake</Link>
-                                <Link href="/bakers/orders">Orders</Link>
-                                <Link href="/profile">Change Passwrod</Link>
+                                <Link href="/bakers/orders">My Orders</Link>
+                                <Link href="/profiles/orders">My Requests</Link>
+                                <Link href="/profiles">Edit Profile</Link>
                                 <Link href="/" onClick={() => signOut()} value="action">Log out</Link>
                                 </div>
                             </div>

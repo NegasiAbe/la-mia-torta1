@@ -3,6 +3,10 @@
   width: 100%;
   margin-left: 5%;
 }
+.searchTitle{
+  color: blueviolet;
+  margin: 0;
+}
 
 .searchBar{
   width: 100%;
@@ -24,15 +28,7 @@
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 10% 0 0;
-
-  background-image: url('../public/image/bg.jpg');
-
-  background-repeat: repeat;
-  background-position: center;
-  background-size: fill;
 }
-
-
 .cards{
   display: flex;
   align-items: center;
@@ -47,7 +43,7 @@
   .cards{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column-reverse;
+    flex-direction: row;
     align-items: center;
     justify-content: start;
     margin-top: 10px;
