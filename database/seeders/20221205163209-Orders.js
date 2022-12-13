@@ -4,13 +4,13 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('Orders', [{
+ /*    await queryInterface.bulkInsert('Orders', [{
       UserId: 1,
       CakeId: 1,
       status:"requested",
       createdAt: new Date(),
       updatedAt: new Date(),
-    }], {});
+    }], {}); */
   },
 
   async down(queryInterface, Sequelize) {
