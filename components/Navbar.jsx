@@ -9,7 +9,7 @@ export default function Component() {
             <div className={styles.container}>
                 <nav className={styles.nav}>
                     <div >
-                    <a href="/" ><Image src="https://res.cloudinary.com/dlmrmq1tl/image/upload/v1670770166/LaMiaTorta/logo-withoutBG_sbnqri.png" height="200" width="200" alt="logo" className={styles.navBranding}/></a>
+                    <Link href="/" ><Image src="https://res.cloudinary.com/dlmrmq1tl/image/upload/v1670770166/LaMiaTorta/logo-withoutBG_sbnqri.png" height="200" width="200" alt="logo" className={styles.navBranding}/></Link>
                     </div>
                     <ul className={styles.navMenu}>
                         <li className={styles.navItem}>
