@@ -1,16 +1,20 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import userController from "../../../controllers/userController"
-//import styles from '../../../styles/login.module'
-import GithubProvider from "next-auth/providers/github"
+import GoogleProvider from "next-auth/providers/google"
+//import GithubProvider from "next-auth/providers/github"
 
 export const authOptions = {
   secret: 'J@ss3!c63@1',
   providers: [
-    GithubProvider({
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
+    /* GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-    }),    //add external providor like google and github 
+    }),    //add external providor like google and github  */
     CredentialsProvider({
       name: "credentials",
       credentials: {

@@ -94,10 +94,11 @@
 }
 
 .details{
-    border: 1px solid black;
+    border: 1px solid blueviolet;
     height: 400px;
     width:500px;
     margin-left: 400px;
+    transition: outline 0.6s linear;
     
     
 }

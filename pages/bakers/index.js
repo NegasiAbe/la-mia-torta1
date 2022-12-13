@@ -12,7 +12,6 @@ export default function Home(props) {
 
   //send the props current user to navbar componont 
   const cakes = props.cakes;
-  
   return (
     <>
       <Navbar></Navbar>
