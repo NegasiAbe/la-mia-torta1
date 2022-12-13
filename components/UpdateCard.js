@@ -12,16 +12,16 @@ export default function Component({ cake }) {
       <div className={styles.cardDetails}>
         <div className={styles.topDetails}>
           <h5>{cake.name}</h5>
-          <p>{cake.description}</p>
-          <p>{cake.location}</p>
-          <p>{cake.price}</p>
+          <p className={styles.description}>{cake.description}</p>
+          <h6>{cake.location}</h6>
+          <h6>{cake.price}</h6>
         </div>
         <div className={styles.downDetails}>
           <div className={styles.selectOne} >
             <Link className={styles.Edit} href={`/cakes/${cake.id}/edit`}>Edit</Link>
           </div>
           <div className={styles.selectOne} >
-            <Link className={styles.Delete} href="#">Delete</Link>
+            <Link className={styles.Delete} href={`/api/cakes/${cake.id}/delete`}>Delete</Link>
           </div>
         </div>
       </div>

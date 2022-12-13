@@ -1,17 +1,15 @@
+.container{
+  position: relative;
+  width: 100%;
+  margin-left: 5%;
+}
 .containerImg {
   flex-direction: column;
   text-align: center;
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 10% 0 0;
-  background-repeat: repeat;
-  background-position: center;
-  background-size: fill;
 }
-.container{
-  position: relative;
-}
-
 
 .cards{
   display: flex;

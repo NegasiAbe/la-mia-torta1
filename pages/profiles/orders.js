@@ -8,8 +8,8 @@ export default function customerOrder(props) {
     const curUser = props.currentUser;
     //send the props current user to navbar componont 
     const orders = props.orders;
-    console.log('the orders of a customer are', orders)
-    /* {console.log(orders)} */
+    
+  console.log("checking the orders and props: ",orders)
     return (
         <>
             <Navbar curuser={curUser}></Navbar>
@@ -17,7 +17,7 @@ export default function customerOrder(props) {
             <div className={styles.containerImg}>
                 <div className={styles.container}>
                     <div className={styles.cards}>
-                        {orders.map(order => (<Card cake={order} key={order.id} />))}
+                        {orders.map(order => (<Card cake={order.Cake} key={order.id} />))}
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         const {id} = await ordersController.paid(req.query.id)
         // changing to confirmed for the status
          //req.body gives the cakeid
-        res.status(200).redirect('/')
+        res.status(200).redirect(`/orders/${id}`)
         
     }
     
