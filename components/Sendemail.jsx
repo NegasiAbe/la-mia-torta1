@@ -3,7 +3,6 @@ import emailjs from "@emailjs/browser";
 
 export default function Component({ curuser }) {
   const form = useRef();
-  console.log('the form to send as an email is ', form)
   /* 
       form.message = "there is message"
       form.email = "jossmicheal@gmail.com" */
@@ -21,7 +20,6 @@ export default function Component({ curuser }) {
       )
       .then(
         (result) => {
-          console.log('name: ', form)
           alert(result.text);
         },
         (error) => {
