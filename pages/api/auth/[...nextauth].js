@@ -21,7 +21,8 @@ export const authOptions = {
         try {
           //getorcreate one
           const user = await userController.getone(credentials.email,credentials.password)
-          //console.log(user);
+          console.log('the user in auth', credentials.email,credentials.password);
+          console.log('the user in auth', user);
           if (user) {
             return user
           } else {

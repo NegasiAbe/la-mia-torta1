@@ -7,7 +7,7 @@ import { getSession } from 'next-auth/react';
 export default function bakerOrder(props) {
   const curUser = props.currentUser;
   //send the props current user to navbar componont 
-  const orders = props.orders.Cake;
+  const orders = props.orders;
   /* {console.log(orders)} */
   return (
     <>
@@ -15,7 +15,7 @@ export default function bakerOrder(props) {
       <div className={styles.container1}>
         <div className={styles.containerImg}>
           <div className={styles.cards}>
-            {orders.map(order => (<Card cake={order} key={order.id} />))}
+            {orders.map(order => (<Card cake={order.Cake} key={order.id} />))}
           </div>
         </div>
       </div>
