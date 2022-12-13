@@ -16,7 +16,7 @@ export default function Order(props) {
                 <div className={styles.details}>
                     <h4>orderID# {order[0].id}</h4>
                     <h4>You have ordered for: {order[0].Cake.name}</h4>
-                    <h4>The price is: {order[0].Cake.price} $</h4>
+                    <h4>The price is: ${order[0].Cake.price}</h4>
                     <h4>status: {order[0].status}</h4>
 
                     {order[0].status == "confirmed" ?
