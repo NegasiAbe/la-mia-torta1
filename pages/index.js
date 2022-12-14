@@ -13,7 +13,7 @@ import { getSession } from 'next-auth/react';
 export default function Home(props) {
   const curUser = props.currentUser
   //send the props current user to navbar componont 
-  
+
   const [query, setQuery] = useState("");
   const [cakes, setCakes] = useState(props.cakes);
   useEffect(() => {
@@ -23,10 +23,17 @@ export default function Home(props) {
     cake.location.toLowerCase().includes(query)))
   }
   }, [query])
-  
+
   return (
     <>
+     
       <Navbar curuser={curUser}></Navbar>
+      {props.new ?
+        <div class="alert alert-primary" role="alert">
+          Your default password is : {props.pswd}
+        </div> :
+        <p></p>
+      }
       <div className={styles.containerImg}>
         <div className={styles.container}>
           <div className={styles.searchBar}>
@@ -39,10 +46,10 @@ export default function Home(props) {
         </div>
       </div>
 
-      {props.new ?
+     {/*  {props.new ?
         <Sendemail curuser={curUser} /> :
         <h4></h4>
-      }
+      } */}
     </>
   )
 }

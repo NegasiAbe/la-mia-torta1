@@ -5,6 +5,8 @@ import Navbar from '../../components/Navbar';
 import { getSession } from 'next-auth/react';
 import { Input } from 'reactstrap';
 
+
+
 export default function getProfile(props) {
   const curUser = props.currentUser;
   //send the props current user to navbar componont 
@@ -20,15 +22,15 @@ export default function getProfile(props) {
             <form method="POST" action={`/api/profiles/${user.id}`}>
               <div className={styles.formGroup}>
                 <label htmlFor="firstname">First Name</label><br />
-                <Input className={styles.formControl} type="text" name='firstname' id="firstname" placeholder={user.name} />
+                <Input className={styles.formControl} type="text" name='name' id="firstname" placeholder={user.name} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="lastname">Last Name</label><br />
-                <Input className={styles.formControl} name='lastname' id="lastname" type="text" placeholder={user.LastName} />
+                <Input className={styles.formControl} name='lastName' id="lastname" type="text" placeholder={user.LastName} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="email">Email</label><br />
-                <Input className={styles.formControl} name='email' id="email" type="email" placeholder={user.email} />
+                <Input className={styles.formControl} name='inputEmail' id="email" type="email" placeholder={user.email} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="password">Password</label><br />
@@ -63,32 +65,3 @@ export async function getServerSideProps(req, res) {
     props: { profile: stringfyuser, currentUser: session?.user || null },
   }
 }
-{/* <div className={styles.row}>
-        <div className={styles.card}>
-          <div className={styles.cardBody}>
-
-            <form method="POST" action={`/api/profiles/${user.id}`}>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="firstname">First Name</label><br />
-                <Input type="text" name='firstname' id="firstname" placeholder={user.name} />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="lastname">Last Name</label><br />
-                <Input name='lastname' id="lastname" type="text" placeholder={user.LastName} />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="email">Email</label><br />
-                <Input name='email' id="email" type="email" placeholder={user.email} />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="password">Password</label><br />
-                <Input name='password' id="password" type="password" placeholder={user.password} />
-              </div>
-              <div className={styles.formGroup}>
-                <button type="submit" value="Edit" /><br />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div > */}

@@ -3,9 +3,9 @@ import emailjs from "@emailjs/browser";
 
 export default function Component({ curuser }) {
   const form = useRef();
-  /* 
-      form.message = "there is message"
-      form.email = "jossmicheal@gmail.com" */
+  
+  /*     form.current.message = "there is message"
+      form.current.email = "jossmicheal@gmail.com" */
 
   const sendEmail = (e) => {
     /* console.log('page is loaded') */
