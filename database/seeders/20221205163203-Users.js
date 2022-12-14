@@ -11,6 +11,7 @@ module.exports = {
         email: 'z@a.com',
         phoneNumber: '00397898788',
         address: 'Qalai Shada 2',
+        imageAvatar: '',
         password: '123',
         createdAt: new Date(),
         updatedAt: new Date(),

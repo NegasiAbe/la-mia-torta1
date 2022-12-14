@@ -4,10 +4,25 @@ import Navbar from '../../components/Navbar';
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 import { getSession } from 'next-auth/react';
 import { Input } from 'reactstrap';
+import { useState } from 'react';
 
 export default function getProfile(props) {
-  const curUser = props.currentUser;
-  //send the props current user to navbar componont 
+  const curUser = props.currentUser
+  const [url, setUrl] = useState('')
+  const handlimgUpload = async (event) => {
+    const file = event.target.files[0]
+    const imageForm = new FormData()
+    imageForm.append("file", file)
+    imageForm.append("upload_preset", "lamiatorta")
+    const imgFetch = await fetch("https://api.cloudinary.com/v1_1/dlmrmq1tl/image/upload",
+      { method: "POST", body: imageForm }
+    )
+    const res = await imgFetch.json()
+    setUrl(res.secure_url)
+  }
+  //How to add an Avatar END
+
+
   const user = props.profile;
   /* console.log('the user is :',user) */
   return (
@@ -18,24 +33,37 @@ export default function getProfile(props) {
           <h2 className={styles.cardTitle}>Change your <span>Profile</span></h2>
           <div className={styles.cardBody}>
             <form method="POST" action={`/api/profiles/${user.id}`}>
+            <div className={styles.formGroup}>
+                <label htmlFor="imgUploud" className={styles.label}>First Upload Your <span>Avatar</span> Please </label><br />
+                <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload} />
+                <input type="hidden" name='imageAvatar' value={url} defaultValue={curUser.imageAvatar}/>
+              </div>
               <div className={styles.formGroup}>
                 <label htmlFor="firstname">First Name</label><br />
-                <Input className={styles.formControl} type="text" name='firstname' id="firstname" placeholder={user.name} />
+                <Input className={styles.formControl} type="text" name='name' id="firstname" defaultValue={user.name} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="lastname">Last Name</label><br />
-                <Input className={styles.formControl} name='lastname' id="lastname" type="text" placeholder={user.LastName} />
+                <Input className={styles.formControl} name='lastName' id="lastname" type="text" defaultValue={user.lastName} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="email">Email</label><br />
-                <Input className={styles.formControl} name='email' id="email" type="email" placeholder={user.email} />
+                <Input className={styles.formControl} name='email' id="email" type="email" defaultValue={user.email} />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="phoneNumber">phoneNumber</label><br />
+                <Input className={styles.formControl} name='phoneNumber' id="phoneNumber" type="phoneNumber" defaultValue={user.phoneNumber} />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="address">address</label><br />
+                <Input className={styles.formControl} name='address' id="address" type="address" defaultValue={user.address} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="password">Password</label><br />
-                <Input className={styles.formControl} name='password' id="password" type="password" placeholder={user.password} />
+                <Input className={styles.formControl} name='password' id="password" type="password" defaultValue={user.password} />
               </div>
               <div className={styles.formGroup1}>
-                <Input className={styles.btn} type="submit" value="Apply"/>
+                <Input className={styles.btn} type="submit" value="Apply" />
                 <br />
               </div>
             </form>
@@ -63,32 +91,3 @@ export async function getServerSideProps(req, res) {
     props: { profile: stringfyuser, currentUser: session?.user || null },
   }
 }
-{/* <div className={styles.row}>
-        <div className={styles.card}>
-          <div className={styles.cardBody}>
-
-            <form method="POST" action={`/api/profiles/${user.id}`}>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="firstname">First Name</label><br />
-                <Input type="text" name='firstname' id="firstname" placeholder={user.name} />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="lastname">Last Name</label><br />
-                <Input name='lastname' id="lastname" type="text" placeholder={user.LastName} />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="email">Email</label><br />
-                <Input name='email' id="email" type="email" placeholder={user.email} />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="password">Password</label><br />
-                <Input name='password' id="password" type="password" placeholder={user.password} />
-              </div>
-              <div className={styles.formGroup}>
-                <button type="submit" value="Edit" /><br />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div > */}
