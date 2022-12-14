@@ -3,12 +3,13 @@ import emailjs from "@emailjs/browser";
 
 export default function Component({ curuser }) {
   const form = useRef();
-  
+
+
   /*     form.current.message = "there is message"
       form.current.email = "jossmicheal@gmail.com" */
 
   const sendEmail = (e) => {
-    /* console.log('page is loaded') */
+  /*   console.log('page is loaded') */
     e.preventDefault();
 
     emailjs
@@ -29,7 +30,7 @@ export default function Component({ curuser }) {
   };
 
   return (
-    <form ref={form} onLoad={sendEmail}>
+    <form ref={form} onSubmit={sendEmail}>
       <input defaultValue={curuser.name} type="text" id="name" name="user_name" />
       <br />
       <input defaultValue={curuser.email} type="email" id="email" name="email" />
@@ -37,6 +38,7 @@ export default function Component({ curuser }) {
       <textarea defaultValue="please try to change the password in http://localhost:3000/profiles"
         name="message" id="text" />
       <br />
-    </form>
+      <input defaultValue={curuser.email} type="submit" id="email" name="Send" />
+    </form> 
   )
 }
