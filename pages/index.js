@@ -17,10 +17,11 @@ export default function Home(props) {
   const [query, setQuery] = useState("");
   const [cakes, setCakes] = useState(props.cakes);
   useEffect(() => {
-    //if(query.length === 0 || query.length > 0)
+    if(query.length === 0 || query.length > 0){
     setCakes(props.cakes.filter(cake => cake.name.toLowerCase().includes(query) || 
     cake.description.toLowerCase().includes(query) || 
     cake.location.toLowerCase().includes(query)))
+  }
   }, [query])
   
   return (
@@ -29,7 +30,7 @@ export default function Home(props) {
       <div className={styles.containerImg}>
         <div className={styles.container}>
           <div className={styles.searchBar}>
-            <h4 className={styles.searchTitle}>search your favorite cake here:</h4>
+            <h4 className={styles.searchTitle}>Search hear for your <span>Favorite Cake</span></h4>
             <input className={styles.search} type="text" placeholder="Search..."  onChange={(e) => setQuery(e.target.value)}/>
           </div>
           <div className={styles.cards}>
