@@ -15,7 +15,7 @@ export default function Order(props) {
             <h2 className={styles.title}>You are just One Step Away...</h2>
             <form method='POST' action={`/api/orders/${order[0].id}/confirm`}>
 
-                <div className={styles.details}>
+                <div className={styles.box}>
                     
                     <h2 className={styles.summary}>Order Summary</h2>
                 <div className= {styles.list}>
