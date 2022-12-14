@@ -14,7 +14,7 @@ export default function Home(props) {
   const cakes = props.cakes;
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar curuser={curUser}></Navbar>
       <div className={styles.container1}>
         <div className={styles.containerImg}>
           <div className={styles.container}>
