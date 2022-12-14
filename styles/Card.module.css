@@ -107,7 +107,7 @@
 
 @media(max-width:768px) {
   .cardimg {
-    height: 300px;
+    height: 200px;
     background-color: blueviolet;
   }
   .cardimg1 {
@@ -128,7 +128,7 @@
     height: auto;
   }
   .description {
-    color: back;
+    color: black;
     background-color: white;
     height: 60px;
     text-align: justify;
@@ -139,8 +139,8 @@
   .downDetails{
     align-items: center;
     width: 100%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin: 0;
+    background-color: yellow;
   }
   .button {
     width: 30%;
