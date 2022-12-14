@@ -14,10 +14,10 @@ export default function Order(props) {
             <h2 className={styles.title}>You are just One Step Away...</h2>
             <form method='POST' action={`/api/orders/${order[0].id}/confirm`}>
 
-                <div className={styles.details}>
+                <div className={styles.box}>
                     
-                    <h2 className={styles.summary}>Order Summary</h2>
-                <div className= {styles.list}>
+                <h2 className={styles.summary}>Order Summary</h2>
+                    <div className= {styles.list}>
                     <h4 className={styles.orderid}>Your Product orderID is #{order[0].id}</h4>
                     <h4 className={styles.cake}>Name of the cake: {order[0].Cake.name}</h4>
                     <h4 className={styles.price}>Total amount: ${order[0].Cake.price}</h4>

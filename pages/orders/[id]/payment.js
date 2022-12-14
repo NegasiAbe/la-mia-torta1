@@ -13,38 +13,38 @@ export default function payment(props) {
     return (
         <>
             <Navbar curuser={curUser}></Navbar>
-            <h2 className={styles.payment}>Payment Method</h2>
+            <h2 className={styles.payment}>Insert Your Card Details</h2>
 
             <div className={styles.containerwrap}>
-            <div className={styles.box1}>
-            <div className={styles.form}>
-                <form action={`/api/orders/${order.id}/payment`}>
+             <div className={styles.box1}>
+                <div className={styles.form}>
+                  <form action={`/api/orders/${order.id}/payment`}>
                     <div >
-                    <Input type="text" placeholder="your full name.." className={styles.name} id="fullname" />
-                    </div>
-                        <div >
-                        <Input type="number" placeholder='insert card no..' className={styles.cardno} id="card no" />
-                        </div>
-                        <div className={styles.wrap}>
-                        <div>
-                        <Input type="text" placeholder='MM/YYYY' className={styles.date} id="date" />
-                        </div>
-                        <div>
-                        <input type="number" placeholder="CVV" className={styles.security} id='security' />
-                        </div>
-                        </div>
-                        <div >
-                        <input type="submit" className={styles.btn} value="Submit" /><br />
-                        </div>
-
+                      <Input type="text" placeholder="your full name.." className={styles.name} id="fullname" />
+                      </div>
+                          <div >
+                            <Input type="number" placeholder='insert card no..' className={styles.cardno} id="card no" />
+                          </div>
+                            <div className={styles.wrap}>
+                          <div>
+                            <Input type="text" placeholder='MM/YYYY' className={styles.date} id="date" />
+                              </div>
+                          <div>
+                            <input type="number" placeholder="CVV" className={styles.security} id='security' />
+                          </div>
+                      </div>
+                            <div >
+                              <input type="submit" className={styles.btn} value="Submit" /><br />
+                            </div>
                         </form>
                     </div>
                 </div>
-                <div className={styles.box2}>
-                    <img className={styles.visacard} src="https://www.braintreepayments.com/images/features/payment-methods/payment-methods.png"></img>
-                </div>
-
+              <div className={styles.box2}>
+                <img className={styles.visacard} src="https://www.braintreepayments.com/images/features/payment-methods/payment-methods.png"></img>
+              </div>
             </div>
+
+
 
         </>
     )
