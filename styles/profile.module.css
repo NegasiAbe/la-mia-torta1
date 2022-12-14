@@ -9,7 +9,9 @@
     justify-content: center;
     width: 100%;
 }
-
+.label span{
+    color: blueviolet;
+}
 .card {
     border: 3px solid blueviolet;
     border-radius: 15px 15px 0 0;
