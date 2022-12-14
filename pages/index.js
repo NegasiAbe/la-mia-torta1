@@ -13,24 +13,31 @@ import { getSession } from 'next-auth/react';
 export default function Home(props) {
   const curUser = props.currentUser
   //send the props current user to navbar componont 
-  
+
   const [query, setQuery] = useState("");
   const [cakes, setCakes] = useState(props.cakes);
   useEffect(() => {
     //if(query.length === 0 || query.length > 0)
-    setCakes(props.cakes.filter(cake => cake.name.toLowerCase().includes(query) || 
-    cake.description.toLowerCase().includes(query) || 
-    cake.location.toLowerCase().includes(query)))
+    setCakes(props.cakes.filter(cake => cake.name.toLowerCase().includes(query) ||
+      cake.description.toLowerCase().includes(query) ||
+      cake.location.toLowerCase().includes(query)))
   }, [query])
-  
+
   return (
     <>
+     
       <Navbar curuser={curUser}></Navbar>
+      {props.new ?
+        <div class="alert alert-primary" role="alert">
+          Your default password is : {props.pswd}
+        </div> :
+        <p></p>
+      }
       <div className={styles.containerImg}>
         <div className={styles.container}>
           <div className={styles.searchBar}>
             <h4 className={styles.searchTitle}>search your favorite cake here:</h4>
-            <input className={styles.search} type="text" placeholder="Search..."  onChange={(e) => setQuery(e.target.value)}/>
+            <input className={styles.search} type="text" placeholder="Search..." onChange={(e) => setQuery(e.target.value)} />
           </div>
           <div className={styles.cards}>
             {cakes.map((cake, index) => (<Card cake={cake} key={cake.id} />))}
