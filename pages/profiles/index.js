@@ -26,7 +26,7 @@ export default function getProfile(props) {
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="lastname">Last Name</label><br />
-                <Input className={styles.formControl} name='lastName' id="lastname" type="text" placeholder={user.LastName} />
+                <Input className={styles.formControl} name='lastName' id="lastame" type="text" placeholder={user.lastName} />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="email">Email</label><br />
