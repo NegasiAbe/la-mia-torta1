@@ -46,7 +46,7 @@ export default function Home(props) {
         </div>
       </div>
 
-     {/*  {props.new ?
+     {/*  {!props.new ?
         <Sendemail curuser={curUser} /> :
         <h4></h4>
       } */}
@@ -67,8 +67,6 @@ export async function getServerSideProps(req, res) {
 
   let firstlogin = 0;
   let password = 'abcd1234';
-
-  console.log("the user in index is :", session.user.email)
 
   const user = await db.User.findOne({ where: { email: session.user.email } })
   if (!user) {

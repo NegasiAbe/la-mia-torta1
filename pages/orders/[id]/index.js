@@ -6,7 +6,6 @@ import db from '../../../database';
 
 export default function Order(props) {
     const order = props.order
-    console.log(order)
 
     const curUser = props.currentUser
     return (
