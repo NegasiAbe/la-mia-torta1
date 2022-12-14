@@ -17,8 +17,8 @@ export default function Order(props) {
 
                 <div className={styles.box}>
                     
-                    <h2 className={styles.summary}>Order Summary</h2>
-                <div className= {styles.list}>
+                <h2 className={styles.summary}>Order Summary</h2>
+                    <div className= {styles.list}>
                     <h4 className={styles.orderid}>Your Product orderID is #{order[0].id}</h4>
                     <h4 className={styles.cake}>Name of the cake: {order[0].Cake.name}</h4>
                     <h4 className={styles.price}>Total amount: ${order[0].Cake.price}</h4>

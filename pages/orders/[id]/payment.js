@@ -13,7 +13,7 @@ export default function payment(props) {
     return (
         <>
             <Navbar curuser={curUser}></Navbar>
-            <h2 className={styles.payment}>Payment Method</h2>
+            <h2 className={styles.payment}>Insert Your Card Details</h2>
 
             <div className={styles.containerwrap}>
              <div className={styles.box1}>

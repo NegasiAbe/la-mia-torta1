@@ -1,16 +1,19 @@
 .payment{
     text-align: center;
     font-family: cursive;
+    margin-top: 20px;
 }
 
 .containerwrap{
     display: flex;
     border: 3px solid blueviolet;
     border-radius: 15px 15px 0 0;
-    margin-left:150px;
+    margin-left:200px;
     padding: 20px;
-    width: 80%;
+    width: 70%;
+    height: 300px;
     box-shadow: 0px 5px 20px 1px black;
+    margin-top: 20px;
 
 }
 
@@ -18,8 +21,8 @@
     flex:1;
     border: 2px solid #c9c9c9;
     height: 200px;
+    margin-top: 20px;
     
-
   
     
 }
@@ -28,6 +31,8 @@
     flex: 1;
     border: 2px solid #c9c9c9;
     margin-left: 10px;
+    margin-top: 20px;
+    
     height: 200px;
     
     
@@ -94,6 +99,7 @@
 
 .title{
     margin-left: 500px;
+    margin-top:20px;
     font-size: 30px;
     font-family: var(--base-font-family);
     font-weight: var(--fw-large);
@@ -103,6 +109,7 @@
     border: 3px solid blueviolet;
     border-radius: 15px 15px 0 0;
     margin-left:400px;
+    margin-top:30px;
     padding: 20px;
     width: 40%;
     box-shadow: 0px 5px 20px 1px black;
@@ -131,6 +138,7 @@
     color: var(--primary-color);
     text-align: center;
     
+    
 }
 .list{
     border: 1px ; 
@@ -138,7 +146,8 @@
     margin: 20px;
     border-radius: 5%;
     background-color: blueviolet;
-    padding: 1px;
+    padding: 2px;
+
     color: white;
 }
 
