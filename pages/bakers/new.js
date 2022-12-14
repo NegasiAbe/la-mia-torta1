@@ -1,6 +1,6 @@
-import styles from '../../styles/NewCake.module.css'
-import { Input } from 'reactstrap'
-import { useState } from 'react'
+import styles from '../../styles/NewCake.module.css';
+import { Input } from 'reactstrap';
+import { useState } from 'react';
 import Navbar from '../../components/Navbar'
 import { getSession } from 'next-auth/react';
 import db from '../../database'

@@ -16,9 +16,9 @@ export default function Component({ cake }) {
             <h6>{cake.price}$</h6>
           </div>
           <div className={styles.downDetails}>
-            <a href={`/cakes/${cake.id}`} className={styles.selectOne}>
+            <Link href={`/cakes/${cake.id}`} className={styles.selectOne}>
               <div className={styles.button}>Select</div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
