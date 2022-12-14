@@ -46,10 +46,10 @@ export default function Home(props) {
         </div>
       </div>
 
-      {props.new ?
+     {/*  {props.new ?
         <Sendemail curuser={curUser} /> :
         <h4></h4>
-      }
+      } */}
     </>
   )
 }
