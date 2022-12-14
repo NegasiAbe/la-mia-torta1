@@ -1,12 +1,15 @@
 import styles from '../../../styles/Select.module.css'
 import Navbar from "../../../components/Navbar"
 import cakeController from '../../../controllers/cakeController'
+import { getSession } from 'next-auth/react'
+
 
 export default function oneCake(props) {
   const cake = props.cake
+  const curUser = props.currentUser
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar curuser={curUser}></Navbar>
       <div className={styles.container}>
         <div className={styles.slidShow}>
           <div className={styles.rowImg}>
@@ -28,9 +31,9 @@ export default function oneCake(props) {
             <div className={styles.detailsCul2}>
               <h4>Price: {cake.price}$</h4>
               <form method='POST' action='/api/orders/create'>
-              <input type="number" hidden name="CakeId" value={cake.id}/>
-                
-                <input type="submit" className={styles.button} value="Order"/>
+                <input type="number" hidden name="CakeId" value={cake.id} />
+
+                <input type="submit" className={styles.button} value="Order" />
               </form>
             </div>
           </div>
@@ -41,9 +44,19 @@ export default function oneCake(props) {
 }
 
 export async function getServerSideProps(req, res) {
+  const session = await getSession(req) //await getSession(req)
+  if (!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: `/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`
+        //change the destination default login in to cusotm login
+      }
+    }
+  }
   const { id } = req.query
   const cake = await cakeController.find(id)
   return {
-    props: { cake },
+    props: { cake, currentUser: session?.user || null },
   }
 }
