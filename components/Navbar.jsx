@@ -21,7 +21,7 @@ export default function Component() {
                                     <i className="fa fa-caret-down">   ▼</i>
                                 </button>
                                 <div className={styles.dropdownContent}>
-                                <Link href="/bakers">Profile</Link>
+                                <Link href="/bakers">My Cakes</Link>
                                 <Link href="/bakers/new">Add New Cake</Link>
                                 <Link href="/bakers/orders">My Orders</Link>
                                 <Link href="/profiles/orders">My Requests</Link>
