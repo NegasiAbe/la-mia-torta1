@@ -48,8 +48,7 @@ export default function NewCake(props) {
                   <Input defaultValue={cake.location} type="text" name="location" className={styles.formControl} id="location" placeholder="please write the address" />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="user id" className={styles.label}>User ID:</label><br />
-                  <Input defaultValue={cake.UserId} type="number" name="UserId" className={styles.formControl} id="user id" placeholder="write the user id" />
+                  <Input defaultValue={cake.UserId} type="hidden" name="UserId" className={styles.formControl} id="user id" placeholder="write the user id" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="imageUrl" className={styles.label}>Insert photo:</label><br />

@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
 .container{
-  height: 700px;
-  width: 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
-
+.labelFirst{
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: large;
+  font-style: oblique;
+}
 .row {
   display: flex;
   flex-direction: row;
@@ -12,20 +24,27 @@
 }
 
 .card{
-  height: 100%;
-  width:100%;
-  margin: 10px 10% 0 10%;
-  border-radius: 15px 15px 0 0;
+    border: 3px solid blueviolet;
+    border-radius: 15px 15px 0 0;
+    margin: 20px 0;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0px 5px 20px 1px black;
 }
 
 .formGroup {
-  height: 100px;
+  height: 100%;
+  margin: 5px 0;
+  padding: 0 2px;
   transition: 0.5s;
   text-align: center;
 }
-
+.formGroup:hover {
+  box-shadow: 1px 1px 10px 5px blueviolet;
+}
 .formGroup label {
   font-size: large;
+  text-align: center;
 }
 
 .container a {
@@ -37,42 +56,42 @@
   text-decoration: none;
 }
 .label1{
-  color: blueviolet;
-  font-size: 20px;
+  height: 70px;
+  text-align: center;
+  
 }
 .formControl {
-  font-size: 1rem;
-  width: 90%;
-  padding: 20px;
-  padding: 25px 15px;
-  margin-bottom: 1.3rem;
-  border: 3px solid blueviolet;
-  border-radius: 5px;
+  height: 100%;
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border: 2px solid blueviolet;
 }
 
 .formControl:focus {
-  border: 3px solid #DD3173;
-  outline: 0;
-  box-shadow: none;
+  border: none;
 }
 
 .btn {
-  color: blueviolet;
-  font-size: large;
+  color: white;
+  background-color: blueviolet;
+  font-size: 16px;
+  height: 40px;
   width: 30%;
-  padding: 0.6rem 1.2rem;
+  margin-top: 20px;
+  padding: 10px 30px;
   border: 2px solid blueviolet;
   border-radius: 15px;
   margin-bottom: 5%;
+  box-shadow: 0px 0px 5px 1px blueviolet;
 }
 
 .btn:hover {
-  color: white;
-  font-size: large;
-  background-color: #DD3173;
-  border-color: #DF8C96;
+  color: blueviolet;
+  background-color: white;
+  border: 2px solid blueviolet;
   transition: .3s;
-}
 
+}
 
 /* quesims work on css*/
