@@ -92,8 +92,4 @@ export async function getServerSideProps(req, res) {
   return {
     props: { profile: stringfyuser, currentUser: session?.user || null },
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> CSS
