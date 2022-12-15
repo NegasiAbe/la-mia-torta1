@@ -23,7 +23,7 @@ export default function NewCake(props) {
 
   return (
     <>
-    <Navbar curuser={curUser}></Navbar>
+    <Navbar curuser={curUser} profile={curUser}></Navbar>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>

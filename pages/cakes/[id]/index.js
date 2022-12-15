@@ -2,14 +2,15 @@ import styles from '../../../styles/Select.module.css'
 import Navbar from "../../../components/Navbar"
 import cakeController from '../../../controllers/cakeController'
 import { getSession } from 'next-auth/react'
-
+import db from '../../../database'
 
 export default function oneCake(props) {
   const cake = props.cake
   const curUser = props.currentUser
+  const user = props.profile
   return (
     <>
-      <Navbar curuser={curUser}></Navbar>
+      <Navbar curuser={curUser} profile={user}></Navbar>
       <div className={styles.container}>
         <div className={styles.slidShow}>
           <div className={styles.rowImg}>
@@ -54,9 +55,12 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
+
+  const user = await db.User.findOne({ where: { email: session.user.email } })
+  const profile = JSON.parse(JSON.stringify(user))
   const { id } = req.query
   const cake = await cakeController.find(id)
   return {
-    props: { cake, currentUser: session?.user || null },
+    props: {profile: profile, cake, currentUser: session?.user || null },
   }
 }
