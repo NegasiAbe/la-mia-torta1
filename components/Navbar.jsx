@@ -38,7 +38,8 @@ export default function navBar(props) {
                         </li>
                         <li className={styles.navItem}>
                             <div className={styles.avatar}>
-                                <Link href="/profiles" ><Image className={styles.imageAvatar} src={userProfile.imageAvatar} height={200} width={200} alt="imageAvatar" /></Link>
+                                <Link href="/profiles" >
+                                    </Link>
                             </div>
                         </li>
                     </ul>
