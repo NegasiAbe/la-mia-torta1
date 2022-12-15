@@ -3,22 +3,24 @@
   flex-wrap: wrap;
   flex-direction: column;
   max-width: 1500px;
-  margin: 0 auto;
-  padding-top: 20px;
+  margin: 10px auto;
+  padding: 20px 0;
   height: 100%;
   width: 30%;
 }
 
 .cardimg {
-  border: 1px solid blueviolet;
+  border: 1px solid #f08080a3;
   border-radius: 15px 15px 0 0;
   transition: 0.5s;
   height: 200px;
   width: 100%;
-  background-color: blueviolet;
+  background-color:#f08080a3;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
+
 .cardimg1 {
-  border-radius: 15px 15px 0 0;
+  border-radius: 10px 10px 0 0;
   width: 100%;
   height: 200px;
   object-fit: fill;
@@ -28,7 +30,7 @@
   background-size: cover;
 }
 .cardimg:hover {
-  box-shadow: 0px 0px 10px 0.5px blueviolet;
+  box-shadow: 0px 0px 10px 0.5px #f08080a3;
 }
 
 .cardDetails {
@@ -37,32 +39,28 @@
   flex-direction: row;
   text-align: left;
   max-width: 1500px;
-  background-color: blueviolet;
-  height: 260px;
+  background-color: #f08080a3;
+  height: 100px;
   width: 100%;
+  border-radius: 0 0 10px 10px;
 }
+
 .topDetails{
-  width: 80%;
+  height: 100%;
+  width: 70%;
 }
+
+
 .cardDetails h5 {
-  margin: 10px 0 0 10px;
-  font-size: 15px;
-  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 5px 0px 10px 10px;
+  font-size: 25px;
+  border-bottom: 1px solid black;
 }
+
 .cardDetails h6 {
   display: grid;
   margin-left: 10px;
-  color: white;
-  font-size: 15px;
-  font-weight: 400;
-  text-align: justify;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-.description{
-  display: grid;
-  margin-left: 10px;
-  color: white;
   font-size: 15px;
   font-weight: 400;
   text-align: justify;
@@ -71,44 +69,37 @@
 }
 
 .downDetails{
-  width: 20%;
-  margin-top: 25vh;
-  margin-bottom: 1vh;
-}
-.selectOne {
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  font-size: 15px;
+  height: 100%;
+  width: 30%;
 }
 
-.button {
-  height: 30px;
-  width: 90%;
-  border: none;
-  
-  padding: 0;
-  text-align: center;
+.selectOne{
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  justify-content: right;
-  color: blueviolet;
-  background-color: white;
-  box-shadow: 1px 2px 5px 1px black;
-  border-radius: 5px;
-  transition: 0.5s;
 }
 
-.button:hover {
-  
-  color: white;
-  background-color: blueviolet;  
+.button{
+  font-size: 14px;
+  color: black;
+  height: 40px;
+  width: 100%;
+  padding: 5px 0 5px 0;
+  margin: 15px 5px;
+  background-color: #f08080a3;
   border: 1px solid white;
   border-radius: 5px;
-  box-shadow: 1px 2px 5px 1px white;
+  transition: .5s;
 }
+.button:hover{
+  color: #f08080da;
+  background-color: white;
+  transition: .5s;
+}
+
+
 
 @media(max-width:768px) {
   .cardimg {

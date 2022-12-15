@@ -11,7 +11,6 @@ export default function Component({ cake }) {
         <div className={styles.cardDetails}>
           <div className={styles.topDetails}>
             <h5>{cake.name}</h5>
-            <p className={styles.description}>{cake.description}</p>
             <h6>{cake.location}</h6>
             <h6>{cake.price}$</h6>
           </div>
@@ -23,5 +22,6 @@ export default function Component({ cake }) {
         </div>
       </div>
     </>
+
   )
 }

@@ -1,37 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,700&family=Caveat:wght@400;600&family=Fuzzy+Bubbles&display=swap');
+
 .container {
-    background-color: #f08080a3;
+    background-image: url("../public/image/bg.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    font-family: 'Archivo', sans-serif;
+    font-style: italic;
 }
 
 .nav {
-    min-height: 70px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    padding: 0 300px;
 }
 
 .navMenu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 60px;
 }
 
 .navBranding {
-    height: 100px;
+    height: 200px;
     width: 100%;
 }
 
 .navLink {
-    color: black;
+    color: white;
     text-decoration: none;
 }
-.navLink:hover {
-    color: black;
-}
 
+.navLink:hover {
+    text-shadow: 1px 1px 10px white;
+    transition: 0.8s;
+}
 
 .navItem {
     list-style: none;
@@ -43,19 +49,6 @@
 }
 
 
-.avatar{
-    height: 45px;
-    width: 45px;
-    border: 2px solid black;
-    border-radius: 50%;
-}
-
-.imageAvatar{
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-}
-
 
 .dropdown {
     float: right;
@@ -63,10 +56,10 @@
 }
 
 .dropbtn {
-    font-size: 18px;
+    font-size: 16px;
     border: none;
     outline: none;
-    color: black;
+    color: white;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
@@ -78,7 +71,7 @@
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 30px 2px rgb(0 0 0 / 20%);
     z-index: 1;
 }
 
@@ -93,7 +86,7 @@
 
 
 .dropdownContent a:hover {
-    background-color: #f08080a3;
+    background-color: blueviolet;
 }
 
 .dropdown:hover .dropdownContent {
@@ -107,7 +100,10 @@
 
 
 
-/* .bar {
+
+
+
+.bar {
     display: block;
     width: 25px;
     height: 3px;
@@ -115,7 +111,7 @@
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: white;
-} */
+}
 
 /*
 @media(max-width:768px) {

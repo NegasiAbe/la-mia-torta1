@@ -15,7 +15,7 @@
   transition: 0.5s;
   height: 200px;
   width: 100%;
-  background-color: #f08080a3;
+  background-color:#f08080a3;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -29,7 +29,6 @@
   background-position: center;
   background-size: cover;
 }
-
 .cardimg:hover {
   box-shadow: 0px 0px 10px 0.5px #f08080a3;
 }
@@ -40,16 +39,17 @@
   flex-direction: row;
   text-align: left;
   max-width: 1500px;
-  background-color: #f08080a3;
-  height: 200px;
+  background-color:#f08080a3;
+  height: 100%;
   width: 100%;
   border-radius: 0 0 10px 10px;
 }
 
-.topDetails {
+.topDetails{
   height: 100%;
   width: 70%;
 }
+
 
 .cardDetails h5 {
   font-family: 'Times New Roman', Times, serif;
@@ -68,44 +68,32 @@
   word-wrap: break-word;
 }
 
-.description {
-  margin-left: 10px;
-  font-size: 15px;
-  font-weight: 400;
-  text-align: justify;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-.downDetails {
+.downDetails{
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   text-align: center;
-  justify-content: center;
   height: 100%;
   width: 30%;
 }
 
-.selectOne1{
-  margin-top: 30px;
-  width: 100%;
-  height: 30px;
+.selectOne{
   text-decoration: none;
 }
-.Edit {
+
+.button{
   font-size: 14px;
   color: black;
-  height: 100%;
-  width: 80%;
+  height: 40px;
+  width: 100%;
   padding: 5px 0 5px 0;
+  margin: 15px 5px;
   background-color: #f08080a3;
   border: 1px solid white;
   border-radius: 5px;
   transition: .5s;
 }
-.Edit:hover{
+.button:hover{
   color: #f08080da;
   background-color: white;
   transition: .5s;
@@ -113,41 +101,14 @@
 
 
 
-.selectOne2{
-  margin-top: 10px;
-  width: 100%;
-  height: 30px;
-  text-decoration: none;
-}
-
-.Delete {
-  font-size: 14px;
-  color: black;
-  height: 100%;
-  width: 80%;
-  padding: 5px 0 5px 0;
-  background-color: #f08080a3;
-  border: 1px solid white;
-  border-radius: 5px;
-  transition: .5s;
-}
-
-.Delete:hover {
-  color: #f08080da;
-  background-color: white;
-  transition: .5s;
-}
-
-/* 
 @media(max-width:768px) {
   .cardimg {
-    height: 300px;
-    background-color: blueviolet;
-  }
+    height: 200px;
 
+  }
   .cardimg1 {
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     background-repeat: repeat;
     background-position: center;
     background-size: cover;
@@ -160,9 +121,8 @@
     text-align: center;
     align-items: center;
     max-width: 1000px;
-    height: auto;
+    height: 350px;
   }
-
   .description {
     color: black;
     background-color: white;
@@ -171,23 +131,29 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     overflow-y: scroll;
-  }
-
-  .downDetails {
+  }  
+  .downDetails{
+    margin: 0;
+    padding: 0;
     align-items: center;
     width: 100%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin: 0;
   }
-
   .button {
-    width: 30%;
-    font-size: 10px;
-    background-color: rgb(247, 145, 206);
-    border: 1px solid blueviolet;
-    border-radius: 10px;
+    width: 50%;
+    font-size: 16px;
+    color: blueviolet;
+    background-color: white;
     box-shadow: 1px 2px 5px 1px black;
-    transition: 0.5s;
+    transition: 0.7s;
   }
 
-} */
+  .button:hover {
+    color: white;
+    background-color: blueviolet;  
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 1px white;
+  }
+
+}

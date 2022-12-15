@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "../styles/Card.module.css";
+import styles from "../styles/OrdersCard.module.css";
 
 export default function Component(orders) {
   return (
