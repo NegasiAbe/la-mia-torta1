@@ -18,7 +18,7 @@ export default function Component({ cake }) {
         </div>
         <div className={styles.downDetails}>
           <Link className={styles.selectOne1} href={`/cakes/${cake.id}/edit`}>
-            <div className={styles.edit}>Edit</div>
+            <div className={styles.Edit}>Edit</div>
           </Link>
           <Link className={styles.selectOne2} href={`/api/cakes/${cake.id}/delete`}>
             <div className={styles.Delete}>Delete</div>

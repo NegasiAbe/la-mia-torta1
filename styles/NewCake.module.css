@@ -9,13 +9,14 @@
   justify-content: center;
   width: 100%;
 }
-
+.labelFirst span{
+  color: #f08080a3;
+}
 .labelFirst {
+  font-size: 18px;
   text-align: center;
   margin-bottom: 10px;
   margin-top: 20px;
-  font-size: large;
-  font-style: oblique;
 }
 
 .row {
@@ -27,12 +28,12 @@
 }
 
 .card {
-  border: 3px solid blueviolet;
+  border: 3px solid #f08080a3;
   border-radius: 15px 15px 0 0;
   margin: 20px 0;
   padding: 20px;
   width: 40%;
-  box-shadow: 0px 5px 20px 1px black;
+  box-shadow: 0px 5px 30px 2px rgb(0 0 0 / 20%);
 }
 
 .formGroup {
@@ -42,10 +43,6 @@
   transition: 0.5s;
   text-align: center;
 }
-
-/* .formGroup:hover {
-  box-shadow: 1px 1px 10px 5px blueviolet;
-} */
 
 .formGroup label {
   font-size: large;
@@ -72,7 +69,7 @@
   width: 100%;
   padding: 10px 10px;
   margin: 10px 0;
-  border: 2px solid rgb(43, 226, 125);
+  border: 2px solid #f08080a3;
 }
 
 .formControl:focus {
