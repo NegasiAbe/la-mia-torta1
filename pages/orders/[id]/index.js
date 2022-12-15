@@ -11,11 +11,11 @@ export default function Order(props) {
     return (
         <>
             <Navbar curuser={curUser} profile={user}></Navbar>
-            <h2 className={styles.title}>You are just One Step Away...</h2>
+            <div className={styles.container}>
+            <h2 className={styles.title}>Cake is For Life,<span> Not Just For Birthdays!</span></h2>
+            
             <form method='POST' action={`/api/orders/${order[0].id}/confirm`}>
-
                 <div className={styles.box}>
-
                     <h2 className={styles.summary}>Order Summary</h2>
                     <div className={styles.list}>
                         <h4 className={styles.orderid}>Your Product orderID is #{order[0].id}</h4>
@@ -26,12 +26,12 @@ export default function Order(props) {
                     {order[0].status == "confirmed" ?
                         <input type="submit" className={styles.button} value="Go To Payment" /> :
                         order[0].status == "paid" ?
-                            <input type="hidden" className={styles.button} value="Confirm" /> :
+                            <input type="hidden" value="Confirm" /> :
                             <input type="submit" className={styles.button} value="Confirm" />
                     }
-
                 </div>
             </form>
+            </div>
         </>
     )
 }
@@ -59,7 +59,7 @@ export async function getServerSideProps(req, res) {
 
     const stringifyorder = JSON.parse(JSON.stringify(order))
     return {
-        props: {profile: profile, order: stringifyorder, currentUser: session?.user || null },
+        props: { profile: profile, order: stringifyorder, currentUser: session?.user || null },
     }
 
 }
