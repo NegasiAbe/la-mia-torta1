@@ -1,12 +1,11 @@
-import styles from "../styles/Navbar.module.css";
-import { signOut } from "next-auth/react";
+import styles from "../styles/Footer.module.css";
+import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function navBar(props) {
     const curUser = props.currentUser
-    const userProfile = props.profile
-    console.log("userProfileeeeeeeeeeeee", userProfile, props)
+
     return (
         <>
             <div className={styles.container}>
@@ -19,28 +18,13 @@ export default function navBar(props) {
                             <Link href="/" className={styles.navLink}>Home</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <div className={styles.dropdown}>
-                                <button className={styles.dropbtn}>My Account
-                                    <i className="fa fa-caret-down">   ▼</i>
-                                </button>
-                                <div className={styles.dropdownContent}>
-                                    <Link href="/bakers">My Cakes</Link>
-                                    <Link href="/bakers/new">Add New Cake</Link>
-                                    <Link href="/bakers/orders">My Orders</Link>
-                                    <Link href="/profiles/orders">My Requests</Link>
-                                    <Link href="/profiles">Edit Profile</Link>
-                                    <Link href="/" onClick={() => signOut()} value="action">Log out</Link>
-                                </div>
+                            <h1>Welcom dear<span> HASSANI</span></h1>
+                        </li>
+                       {/*  <li className={styles.navItem}>
+                            <div >
+                                <Link href="/" ><Image src={curUser} height={200} width={200} alt="imageAvatar"/></Link>
                             </div>
-                        </li>
-                        <li className={styles.navItem}>
-                            <Link href="/profiles" className={styles.navLink}>{userProfile.name}</Link>
-                        </li>
-                        <li className={styles.navItem}>
-                            <div className={styles.avatar}>
-                                <Link href="/profiles" ><Image className={styles.imageAvatar} src={userProfile.imageAvatar} height={200} width={200} alt="imageAvatar" /></Link>
-                            </div>
-                        </li>
+                        </li> */}
                     </ul>
                     <div className={styles.hamburger}>
                         <span className={styles.bar}></span>
@@ -59,7 +43,7 @@ export async function getServerSideProps(req, res) {
       return {
         redirect: {
           permanent: false,
-          destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
+          destination: `/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`
           //change the destination default login in to cusotm login
         }
       }
