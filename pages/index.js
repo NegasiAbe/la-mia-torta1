@@ -6,7 +6,6 @@ import React from "react";
 /* import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css'; */
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import { useEffect, useState } from "react";
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 import { getSession } from 'next-auth/react';
@@ -28,7 +27,6 @@ export default function Home(props) {
 
   return (
     <>
-    <Footer curuser={curUser}></Footer>
       <Navbar curuser={curUser} profile={profile}></Navbar>
       {props.new ?
         <div class="alert alert-primary" role="alert">

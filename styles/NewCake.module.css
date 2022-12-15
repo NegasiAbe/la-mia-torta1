@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
-.container{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
-.labelFirst{
+
+.labelFirst {
   text-align: center;
   margin-bottom: 10px;
   margin-top: 20px;
   font-size: large;
   font-style: oblique;
 }
+
 .row {
   display: flex;
   flex-direction: row;
@@ -23,13 +26,13 @@
   width: 100%;
 }
 
-.card{
-    border: 3px solid blueviolet;
-    border-radius: 15px 15px 0 0;
-    margin: 20px 0;
-    padding: 20px;
-    width: 40%;
-    box-shadow: 0px 5px 20px 1px black;
+.card {
+  border: 3px solid blueviolet;
+  border-radius: 15px 15px 0 0;
+  margin: 20px 0;
+  padding: 20px;
+  width: 40%;
+  box-shadow: 0px 5px 20px 1px black;
 }
 
 .formGroup {
@@ -39,9 +42,11 @@
   transition: 0.5s;
   text-align: center;
 }
-.formGroup:hover {
+
+/* .formGroup:hover {
   box-shadow: 1px 1px 10px 5px blueviolet;
-}
+} */
+
 .formGroup label {
   font-size: large;
   text-align: center;
@@ -55,17 +60,19 @@
   color: #DD3173;
   text-decoration: none;
 }
-.label1{
+
+.label1 {
   height: 70px;
   text-align: center;
-  
+
 }
+
 .formControl {
   height: 100%;
-    width: 100%;
-    padding: 10px 10px;
-    margin: 10px 0;
-    border: 2px solid blueviolet;
+  width: 100%;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border: 2px solid rgb(43, 226, 125);
 }
 
 .formControl:focus {
@@ -73,24 +80,22 @@
 }
 
 .btn {
-  color: white;
-  background-color: blueviolet;
-  font-size: 16px;
+  font-size: 14px;
+  color: black;
   height: 40px;
-  width: 30%;
-  margin-top: 20px;
-  padding: 10px 30px;
-  border: 2px solid blueviolet;
-  border-radius: 15px;
-  margin-bottom: 5%;
-  box-shadow: 0px 0px 5px 1px blueviolet;
+  width: 100%;
+  padding: 5px 0 5px 0;
+  margin: 15px 5px;
+  background-color: #f08080a3;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: .5s;
 }
 
 .btn:hover {
-  color: blueviolet;
+  color: #f08080da;
   background-color: white;
-  border: 2px solid blueviolet;
-  transition: .3s;
+  transition: .5s;
 
 }
 
