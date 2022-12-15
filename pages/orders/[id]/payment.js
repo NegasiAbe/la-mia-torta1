@@ -15,28 +15,37 @@ export default function payment(props) {
   return (
     <>
       <Navbar curuser={curUser} profile={user}></Navbar>
-      <h2 className={styles.payment}>Insert Your Card Details</h2>
+      <h2 className={styles.payment}>Insert Your Card
+      <span> Details </span></h2>
 
       <div className={styles.containerwrap}>
         <div className={styles.box1}>
           <div className={styles.form}>
             <form action={`/api/orders/${order.id}/payment`}>
               <div >
+              <label className={styles.names}>Name</label><br />
                 <Input type="text" placeholder="your full name.." className={styles.name} id="fullname" />
+
               </div>
               <div >
+              <label className={styles.card}>Your card number</label>
+
                 <Input type="number" placeholder='insert card no..' className={styles.cardno} id="card no" />
               </div>
               <div className={styles.wrap}>
                 <div>
+              <label className={styles.expiry}>Expiry Date</label>
+
                   <Input type="text" placeholder='MM/YYYY' className={styles.date} id="date" />
                 </div>
                 <div>
+              <label className={styles.number}>Security number</label>
+
                   <input type="number" placeholder="CVV" className={styles.security} id='security' />
-                </div>
+                 </div>
               </div>
               <div >
-                <input type="submit" className={styles.btn} value="Submit" /><br />
+                <input type="submit" className={styles.btn} value="Submit" />
               </div>
             </form>
           </div>
