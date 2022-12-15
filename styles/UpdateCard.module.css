@@ -41,7 +41,7 @@
   text-align: left;
   max-width: 1500px;
   background-color: #f08080a3;
-  height: 140px;
+  height: 200px;
   width: 100%;
   border-radius: 0 0 10px 10px;
 }
@@ -69,9 +69,7 @@
 }
 
 .description {
-  display: grid;
   margin-left: 10px;
-  color: white;
   font-size: 15px;
   font-weight: 400;
   text-align: justify;
@@ -89,20 +87,15 @@
   width: 30%;
 }
 
-.selectOne1 {
-  margin-top: 20px;
-  text-decoration: none;
- /*  background-color: blue; */
-  height: 40px;
+.selectOne1{
+  margin-top: 30px;
   width: 100%;
+  text-decoration: none;
+  background-color: yellow;
 }
-
-.selectOne2 {
-  margin: 0px 0;
+.selectOne2{
   text-decoration: none;
-  height: 40px;
- /*  background-color: aqua; */
-  width: 100%;
+  background-color: green;
 }
 
 .Edit {
@@ -116,10 +109,8 @@
   border: 1px solid white;
   border-radius: 5px;
   transition: .5s;
-  /* text-decoration: none; */
 }
-
-.Edit:hover {
+.Edit:hover{
   color: #f08080da;
   background-color: white;
   transition: .5s;
@@ -144,7 +135,7 @@
   transition: .5s;
 }
 
-
+/* 
 @media(max-width:768px) {
   .cardimg {
     height: 300px;
@@ -196,4 +187,4 @@
     transition: 0.5s;
   }
 
-}
+} */
