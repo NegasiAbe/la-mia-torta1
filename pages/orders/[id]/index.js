@@ -1,5 +1,5 @@
 import Navbar from '../../../components/Navbar'
-import styles from '../../../styles/Payment.module.css'
+import styles from '../../../styles/oneStepAway.module.css'
 import { getSession } from 'next-auth/react';
 import db from '../../../database';
 
