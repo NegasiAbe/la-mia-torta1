@@ -53,3 +53,20 @@ export default function navBar(props) {
     )
 }
 
+export async function getServerSideProps(req, res) {
+    const session = await getSession(req) //await getSession(req)
+    if (!session) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
+          //change the destination default login in to cusotm login
+        }
+      }
+    }
+    const user = await db.User.findOne({ where: { email: session.user.email } })
+    const stringfyuser = JSON.parse(JSON.stringify(user))
+    return {
+      props: { profile: stringfyuser, currentUser: session?.user || null },
+    }
+  }

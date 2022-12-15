@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 export default function getProfile(props) {
   const curUser = props.currentUser
-/*   const [url, setUrl] = useState('')
+ /*  const [url, setUrl] = useState('')
   const handlimgUpload = async (event) => {
     const file = event.target.files[0]
     const imageForm = new FormData()
@@ -35,12 +35,12 @@ export default function getProfile(props) {
           <h2 className={styles.cardTitle}>Change your <span>Profile</span></h2>
           <div className={styles.cardBody}>
             <form method="POST" action={`/api/profiles/${user.id}`}>
-            {/* <div className={styles.formGroup}>
+           {/*  <div className={styles.formGroup}>
                 <label htmlFor="imgUploud" className={styles.label}>First Upload Your <span>Avatar</span> Please </label><br />
                 <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload} />
                 <input type="hidden" name='imageAvatar' value={url} defaultValue={curUser.imageAvatar}/>
-              </div>
- */}              <div className={styles.formGroup}>
+              </div> */}
+              <div className={styles.formGroup}>
                 <label htmlFor="firstname">First Name</label><br />
                 <Input className={styles.formControl} type="text" name='name' id="firstname" defaultValue={user.name} />
               </div>
@@ -82,7 +82,7 @@ export async function getServerSideProps(req, res) {
     return {
       redirect: {
         permanent: false,
-        destination: `/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`
+        destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
         //change the destination default login in to cusotm login
       }
     }
