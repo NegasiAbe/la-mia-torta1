@@ -39,6 +39,7 @@ export default function navBar(props) {
                         <li className={styles.navItem}>
                             <div className={styles.avatar}>
                                 <Link href="/profiles" >
+<<<<<<< HEAD
                                     {userProfile.imageAvatar ?
                                         <Image className={styles.imageAvatar} src={userProfile.imageAvatar}
                                             height={200} width={200} alt="imageAvatar" /> :
@@ -47,6 +48,9 @@ export default function navBar(props) {
                                             height={200} width={200} alt="imageAvatar" />
                                     }
                                 </Link>
+=======
+                                    </Link>
+>>>>>>> pay
                             </div>
                         </li>
                     </ul>
