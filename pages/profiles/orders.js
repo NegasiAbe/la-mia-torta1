@@ -1,7 +1,7 @@
 import styles from '../../styles/Baker.module.css';
 import Navbar from '../../components/Navbar';
 import db from '../../database';
-import Card from '../../components/Card';
+import Card from '../../components/OrdersCard';
 import { getSession } from 'next-auth/react';
 
 export default function customerOrder(props) {
@@ -17,7 +17,7 @@ export default function customerOrder(props) {
             <div className={styles.containerImg}>
                 <div className={styles.container}>
                     <div className={styles.cards}>
-                        {orders.map(order => (<Card cake={order.Cake} key={order.id} />))}
+                        {orders.map(order => (<Card cake={order} key={order.id} />))}
                     </div>
                 </div>
             </div>

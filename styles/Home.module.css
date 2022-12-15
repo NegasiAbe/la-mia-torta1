@@ -44,15 +44,3 @@
 
 /*Home page End --disply the flats in home page--*/
 
-@media(max-width:768px) {
-  .cards{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    margin-top: 10px;
-  }
-
-
-}
