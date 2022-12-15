@@ -4,10 +4,12 @@ import { Input } from 'reactstrap'
 import { useState } from 'react'
 import Navbar from '../../../components/Navbar';
 import { getSession } from 'next-auth/react';
+import db from '../../../database'
 
 
 export default function NewCake(props) {
   const cake = props.cake
+  const user = props.profile
   const [url, setUrl] = useState(cake.imageUrl)
   const curUser = props.currentUser
   const handlimgUpload = async (event) => {
@@ -24,7 +26,7 @@ export default function NewCake(props) {
 
   return (
     <>
-      <Navbar curuser={curUser}></Navbar>
+      <Navbar curuser={curUser} profile={user}></Navbar>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
@@ -79,10 +81,11 @@ export async function getServerSideProps(req, res) {
       }
     }
   }
-
+  const user = await db.User.findOne({ where: { email: session.user.email } })
+  const profile = JSON.parse(JSON.stringify(user))
   const { id } = req.query
   const cake = await cakesController.find(id)
   return {
-    props: { cake, currentUser: session?.user || null },
+    props: {profile: profile, cake, currentUser: session?.user || null },
   }
 }

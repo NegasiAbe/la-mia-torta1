@@ -6,12 +6,13 @@ import { getSession } from 'next-auth/react';
 
 export default function bakerOrder(props) {
   const curUser = props.currentUser;
+  const user = props.profile
   //send the props current user to navbar componont 
   const orders = props.orders;
   /* {console.log(orders)} */
   return (
     <>
-      <Navbar curuser = {curUser}></Navbar>
+      <Navbar curuser={curUser} profile={user}></Navbar>
       <div className={styles.container1}>
         <div className={styles.containerImg}>
           <div className={styles.cards}>
@@ -36,6 +37,7 @@ export async function getServerSideProps(req, res) {
   /*   const email = "z@a.com"
     session.user.email = email */
   const user = await db.User.findOne({ where: { email: session.user.email } })
+  const profile = JSON.parse(JSON.stringify(user))
   const orders = await db.Order.findAll({
     include: [{ 
       model: db.Cake,
@@ -44,6 +46,6 @@ export async function getServerSideProps(req, res) {
 
   const stringfyOrders = JSON.parse(JSON.stringify(orders))
   return {
-    props: { orders: stringfyOrders, currentUser: session?.user || null },
+    props: {profile: profile, orders: stringfyOrders, currentUser: session?.user || null },
   }
 }

@@ -29,7 +29,7 @@ export default function getProfile(props) {
   /* console.log('the user is :',user) */
   return (
     <>
-      <Navbar curuser={curUser}></Navbar>
+      <Navbar curuser={curUser} profile={user}></Navbar>
       <div className={styles.container}>
         <div className={styles.card}>
           <h2 className={styles.cardTitle}>Change your <span>Profile</span></h2>
