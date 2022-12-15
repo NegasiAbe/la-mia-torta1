@@ -29,7 +29,7 @@ export default function NewCake(props) {
           <div className={styles.card}>
             <form method="POST" action="/api/cakes">
               <div className={styles.formGroup}>
-                <label htmlFor="imgUploud" className={styles.labelFirst}>First Upload Your Cake image Please </label><br />
+                <label htmlFor="imgUploud" className={styles.labelFirst}>First Upload Your Cake <span>Image First</span> </label><br />
                 <input type="file" name="imgUploud" className={styles.formControl} id="imgUploud" onChange={handlimgUpload} />
                 <input type="hidden" name='imageUrl' value={url} />
                 <input type="hidden" name='email' value={curUser.email} />
