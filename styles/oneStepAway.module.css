@@ -89,3 +89,82 @@
 .wrap{
     display:flex;
 }
+
+
+
+
+
+/******/
+
+
+
+
+
+.title{
+    margin-left: 500px;
+    margin-top:20px;
+    font-size: 30px;
+    font-family: var(--base-font-family);
+    font-weight: var(--fw-large);
+}
+
+.box{
+    border: 3px solid blueviolet;
+    border-radius: 15px 15px 0 0;
+    margin-left:400px;
+    margin-top:30px;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0px 5px 20px 1px black;
+
+}
+.summary{
+    text-align: center;
+    font-size: 20px;
+    font-family: var(--base-font-family);
+    font-weight: 2px;
+}
+.orderid{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-weight: var(--fw-large);
+    font-size: var(--fs-paragraph);
+    color: var(--primary-color);
+    text-align: center;
+    
+}
+.cake, .price, .status{
+    
+    margin-left: 20px;
+    font-weight: var(--fw-large);
+    font-size: var(--fs-paragraph);
+    color: var(--primary-color);
+    text-align: center;
+    
+    
+}
+.list{
+    border: 1px ; 
+    opacity: 0.5;
+    margin: 20px;
+    border-radius: 5%;
+    background-color: blueviolet;
+    padding: 2px;
+
+    color: white;
+}
+
+.button{
+    height: 40px;
+    width:300px;
+    background-color: blueviolet;
+    border-radius: 4%;
+    border: 1px ; 
+    padding: 0%;
+    color: white;
+    opacity: 0.5;
+    margin-left: 100px;
+   
+}
+
+    

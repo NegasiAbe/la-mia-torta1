@@ -7,13 +7,13 @@ import { getSession } from 'next-auth/react';
 export default function customerOrder(props) {
     const curUser = props.currentUser;
     //send the props current user to navbar componont 
-    const orders = props.orders;
-    
-  console.log("checking the orders and props: ",orders)
+    const orders = props.orders
+    const user = props.profile
     return (
         <>
-            <Navbar curuser={curUser}></Navbar>
+            <Navbar curuser={curUser} profile={user}></Navbar>
             <br/><br/>
+            <h1>profile/orders</h1>
             <div className={styles.containerImg}>
                 <div className={styles.container}>
                     <div className={styles.cards}>
@@ -30,7 +30,7 @@ export async function getServerSideProps(req, res) {
         return {
             redirect: {
                 permanent: false,
-                destination: `/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`
+                destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
                 //change the destination default login in to cusotm login
             }
         }
@@ -38,13 +38,13 @@ export async function getServerSideProps(req, res) {
     /*   const email = "z@a.com"
       session.user.email = email */
     const user = await db.User.findOne({ where: { email: session.user.email } })
-
+    const profile = JSON.parse(JSON.stringify(user))
     const orders = await db.Order.findAll({
         where: { UserId: user.id },
         include: [{ model: db.Cake, include: db.User }]
     })
     const stringfyOrders = JSON.parse(JSON.stringify(orders))
     return {
-        props: { orders: stringfyOrders, currentUser: session?.user || null },
+        props: {profile: profile, orders: stringfyOrders, currentUser: session?.user || null },
     }
 }

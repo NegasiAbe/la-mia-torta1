@@ -23,7 +23,7 @@ export default function NewCake(props) {
 
   return (
     <>
-    <Navbar curuser={curUser}></Navbar>
+    <Navbar curuser={curUser} profile={curUser}></Navbar>
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.card}>
@@ -70,7 +70,7 @@ export async function getServerSideProps(req, res) {
     return {
       redirect: {
         permanent: false,
-        destination: `/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`
+        destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
         //change the destination default login in to cusotm login
       }
     }

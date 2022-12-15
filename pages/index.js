@@ -1,17 +1,17 @@
 import styles from '../styles/Home.module.css';
 import db from '../database';
 import Card from '../components/Card';
-import Sendemail from '../components/Sendemail'
 import React from "react";
 /* import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css'; */
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar';
 import { useEffect, useState } from "react";
 //import {getSession, signIn, signOut} from 'next-auth/react'; 
 import { getSession } from 'next-auth/react';
 
 export default function Home(props) {
   const curUser = props.currentUser
+  const profile = props.profile
   //send the props current user to navbar componont 
 
   const [query, setQuery] = useState("");
@@ -26,8 +26,7 @@ export default function Home(props) {
 
   return (
     <>
-     
-      <Navbar curuser={curUser}></Navbar>
+      <Navbar curuser={curUser} profile={profile}></Navbar>
       {props.new ?
         <div class="alert alert-primary" role="alert">
           Your default password is : {props.pswd}
@@ -59,7 +58,7 @@ export async function getServerSideProps(req, res) {
     return {
       redirect: {
         permanent: false,
-        destination: `/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F`
+        destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
         //change the destination default login in to cusotm login
       }
     }
@@ -79,7 +78,8 @@ export async function getServerSideProps(req, res) {
   }
   const cakes = await db.Cake.findAll()
   const stringfycakes = JSON.parse(JSON.stringify(cakes))
+  const stringfyuser = JSON.parse(JSON.stringify(user))
   return {
-    props: { pswd: password, new: firstlogin, cakes: stringfycakes, currentUser: session?.user || null },
+    props: {profile: stringfyuser, pswd: password, new: firstlogin, cakes: stringfycakes, currentUser: session?.user || null },
   }
 }
