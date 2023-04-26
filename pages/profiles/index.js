@@ -78,15 +78,15 @@ export default function getProfile(props) {
 
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
-  if (!session) {
+/*   if (!session) {
     return {
       redirect: {
         permanent: false,
-        destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
+       destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}` 
         //change the destination default login in to cusotm login
       }
     }
-  }
+  } */
   const user = await db.User.findOne({ where: { email: session.user.email } })
   const stringfyuser = JSON.parse(JSON.stringify(user))
   return {

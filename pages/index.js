@@ -54,15 +54,15 @@ export default function Home(props) {
 }
 export async function getServerSideProps(req, res) {
   const session = await getSession(req) //await getSession(req)
-  if (!session) {
+ /*  if (!session) {
     return {
       redirect: {
         permanent: false,
-        destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}`
+        destination: `/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}` 
         //change the destination default login in to cusotm login
       }
     }
-  }
+  } */
 
   let firstlogin = 0;
   let password = 'abcd1234';
@@ -74,7 +74,6 @@ export async function getServerSideProps(req, res) {
     password = Math.random().toString(36).slice(-8)
     await db.User.create({ name, email, password })
     firstlogin = 1
-    /*  alert(`Thank you ${name} for trusting in us your password is ${password}`); */
   }
   const cakes = await db.Cake.findAll()
   const stringfycakes = JSON.parse(JSON.stringify(cakes))
